@@ -18,8 +18,6 @@
                     <div class="container">
                         <a class="brand" href="/index.php/">UGrade</a>
                         <div class="nav-collapse collapse">
-                            <p class="navbar-text pull-right">
-                            </p>
                             <ul class="nav">
                                 <li class="active"><a href="#">Home</a></li>
                                 <li><a href="#">About</a></li>
