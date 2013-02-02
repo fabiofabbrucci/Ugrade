@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'www.ofunwebservices.com';
+$db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'ugrade';
 $db['default']['password'] = 'nbya976';
 $db['default']['database'] = 'ugrade';
