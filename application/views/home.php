@@ -19,7 +19,7 @@
                         <a class="brand" href="/index.php/">UGrade</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li class="active"><a href="/index.php/">Home</a></li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Team</a></li>
                                 <li><a href="/index.php/uni/course">Programs</a></li>
