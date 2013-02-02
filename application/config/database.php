@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'www.ofunwebservices.com';
 $db['default']['username'] = 'ugrade';
-$db['default']['password'] = 'Nbya976';
+$db['default']['password'] = 'nbya976';
 $db['default']['database'] = 'ugrade';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

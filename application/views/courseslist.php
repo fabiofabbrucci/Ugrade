@@ -6,9 +6,9 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/application.css" rel="stylesheet">
-        <link href="css/zocial.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/application.css" rel="stylesheet">
+        <link href="/css/zocial.css" rel="stylesheet">
     </head>
     <body>
 
@@ -31,17 +31,24 @@
             </div>
 
             <div class="container">
-
-                <?php echo $course->name; ?>
+                <h1>Lista dei corsi</h1>
+                <ul>
+                    <?php 
+                    foreach($courses as $c){
+                        echo "<li><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a> presso ".$c['uni']->name."</li>";
+                    }
+                    ?>
+                    
+                </ul>
                 
                 <div class="footer">
                     <p>&copy; Company 2013</p>
                 </div>
-
+ 
             </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="js/bootstrap-transition.js"></script>
-        <script src="js/home.js"></script>
+        <script src="/js/bootstrap-transition.js"></script>
+        <script src="/js/home.js"></script>
     </body>
 </html>
