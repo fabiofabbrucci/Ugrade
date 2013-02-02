@@ -22,8 +22,9 @@
                             </p>
                             <ul class="nav">
                                 <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Come funziona</a></li>
+                                <li><a href="#">About</a></li>
                                 <li><a href="#">Team</a></li>
+                                <li><a href="index.php/uni/course">Programs</a></li>
                             </ul>
                         </div>
                     </div>
