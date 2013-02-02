@@ -32,3 +32,63 @@ body {
 #subscription input[type=text]{
     margin-bottom: 0px;
 }
+
+#course_description{
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+#read_more{
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 200px; 
+    position: absolute;
+    background-color: white;
+}
+
+#read_more:hover{
+    background-color: #0088cc;
+    color: #ffffff;
+}
+
+#course_description.open{
+    height: auto;
+    overflow: visible;
+}
+#course_description.open #read_more{
+    bottom: -20px;
+}
+
+#course_show_graphs .bars{
+    float: right;
+    display: inline;
+    width: 200px;
+}
+#course_show_graphs .labels{
+    margin-top: -2px;
+    float: left;
+    display: inline;
+    width: 50px;
+    line-height: 25px;
+}
+.progress{
+    margin-bottom: 5px;
+}
+#course_show_graphs #ranking{
+    margin-top: 8px;
+    font-size: 2em;
+}
+
+#course_list article{
+    padding: 20px;
+}
+
+#course_list article:hover{
+    background-color: #dddddd;
+}
+
+#course_list article .pull-right{
+    text-align: right;
+}

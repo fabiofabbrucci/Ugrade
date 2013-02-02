@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-CREATE DATABASE  IF NOT EXISTS `ugrade` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `ugrade`;
--- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.5.29, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: ugrade
 -- ------------------------------------------------------
--- Server version	5.5.24-log
+-- Server version	5.5.29-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,11 +29,16 @@ CREATE TABLE `program` (
   `cost` int(11) DEFAULT NULL,
   `university_id` int(11) NOT NULL,
   `program_type_id` tinyint(4) NOT NULL,
+  `ranking_financial_times` decimal(10,0) NOT NULL,
+  `description` text NOT NULL,
+  `schedule` text NOT NULL,
+  `admission` text NOT NULL,
+  `sector` varchar(250) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_program_university_idx` (`university_id`),
   KEY `fk_program_type_idx` (`program_type_id`),
-  CONSTRAINT `fk_program_university` FOREIGN KEY (`university_id`) REFERENCES `university` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_program_type1` FOREIGN KEY (`program_type_id`) REFERENCES `program_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_program_type1` FOREIGN KEY (`program_type_id`) REFERENCES `program_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_program_university` FOREIGN KEY (`university_id`) REFERENCES `university` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -46,7 +48,7 @@ CREATE TABLE `program` (
 
 LOCK TABLES `program` WRITE;
 /*!40000 ALTER TABLE `program` DISABLE KEYS */;
-INSERT INTO `program` VALUES (1,'Patacologia Applicata',0,10,1,1),(2,'Fancazzismo',0,100,1,2),(3,'Megacorso figo',1,20000,4,1),(4,'Megacorso figo 2',1,30000,4,2),(5,'Megacorso figo 3',1,40000,4,3);
+INSERT INTO `program` VALUES (1,'Patacologia Applicata',0,10,1,1,0,'','','',''),(2,'Fancazzismo',0,100,1,2,0,'','','',''),(3,'Megacorso figo',1,20000,4,1,0,'','','',''),(4,'Megacorso figo 2',1,30000,4,2,0,'','','',''),(5,'Megacorso figo 3',1,40000,4,3,0,'','','','');
 /*!40000 ALTER TABLE `program` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,6 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-02 17:04:41
-=======
->>>>>>> 6b907fc17dec10df6f373bc8d5b91555c49eeab0
+-- Dump completed on 2013-02-02 17:34:11
