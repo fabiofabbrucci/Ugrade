@@ -35,7 +35,7 @@
 
                 <div class="well">
                     <h1><?php echo $course['corso']->name; ?></h1>
-                    <i class="icon-home"></i><?php echo $course['uni']->name; ?>
+                    <?php echo $course['uni']->name; ?>
                 </div>
                 
                 <div class="footer">
