@@ -59,8 +59,36 @@
                         
                     </div>
                     <div class="span4">
-                        <div class="well well-small">
+                        <div class="well well-small" id="course_show_graphs">
                             <h4>InfoGraphics</h4>
+                            <b>3</b>° di 15
+                            <hr />
+                            <div class="labels">
+                                skill 1<br />
+                                skill 2<br />
+                                skill 3<br />
+                                skill 4<br />
+                                skill 5<br />
+                            </div>
+                                
+                            <div class="bars">
+                                <div class="progress progress-info">
+                                    <div class="bar" style="width: 20%">1.3</div>
+                                </div>
+                                <div class="progress progress-success">
+                                    <div class="bar" style="width: 40%">2.1</div>
+                                </div>
+                                <div class="progress progress-warning">
+                                    <div class="bar" style="width: 60%">3.2</div>
+                                </div>
+                                <div class="progress progress-danger">
+                                    <div class="bar" style="width: 80%">4</div>
+                                </div>
+                                <div class="progress progress-warning">
+                                    <div class="bar" style="width: 12%">0.8</div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

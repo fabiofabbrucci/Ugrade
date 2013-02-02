@@ -60,3 +60,19 @@ body {
 #course_description.open #read_more{
     bottom: -20px;
 }
+
+#course_show_graphs .bars{
+    float: right;
+    display: inline;
+    width: 200px;
+}
+#course_show_graphs .labels{
+    margin-top: -2px;
+    float: left;
+    display: inline;
+    width: 50px;
+    line-height: 25px;
+}
+.progress{
+    margin-bottom: 5px;
+}
