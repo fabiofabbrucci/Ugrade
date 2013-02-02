@@ -35,15 +35,16 @@
                 <div class="hero-unit">
                     <h1>L'università come non l'hai mai cercata</h1>
                     <p>Trova oggi il corso in base ai giudizi delle altre persone.</p>
-                    <form action="/search" method="POST" id="search_form" class="form-horizontal">
+                    <form action="/uni/search" method="POST" id="search_form" class="form-horizontal">
                         <input type="text" placeholder="Università, corso o master" name="" />
                         <input type="submit" class="btn btn-primary" value="Cerca" />
                         <a href="" id="adv_search">Ricerca avanzata</a>
                         <div id="div_adv_search" class="hide">
-                            <label>Nazione</label>
+                            <label>Country</label>
                             <select>
                                 <option></option>
                                 <option>Italia</option>
+                                <option>England</option>
                             </select>
                             <label>Area</label>
                             <select>
@@ -76,7 +77,7 @@
                         <a href="#" class="zocial facebook icon"></a>
                         <a href="#" class="zocial twitter icon"></a>
                         <a href="#" class="zocial tumblr icon"></a>
-                        <a href="mailto:ugrade.startup@gmail.com" class="zocial gmail icon"></a>
+                        <a href="#" class="zocial gmail icon"></a>
                         <a href="#" class="zocial pinterest icon"></a>
                         
                         <div class="well">
@@ -84,7 +85,7 @@
                             <p>
                                 Aiutaci a creare un prodotto che ti aiuti.
                             </p>
-                            <a class="btn btn-large" href="http://www.surveymonkey.com/s/CNRQVVD" target="_blank">
+                            <a class="btn btn-large" href="#">
                                 <i class="icon-map-marker"></i> Partecipa al sondaggio
                             </a>
                             <hr />

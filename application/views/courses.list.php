@@ -33,13 +33,18 @@
             <div class="container">
                 <h1>Lista dei corsi</h1>
                 <ul>
-                    <li><a href="">Titolo del corso</a> presso Università</li>
+                    <?php 
+                    foreach($courses as $c){
+                        echo "<li><a href=".site_url("uni/courses/".$id).">".$c['corso']->name."</a> presso ".$c['uni']->name."</li>";
+                    }
+                    ?>
+                    
                 </ul>
                 
                 <div class="footer">
                     <p>&copy; Company 2013</p>
                 </div>
-
+ 
             </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
