@@ -74,18 +74,17 @@
                         <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
                     </div>
                     <div class="span6">
-                        <a href="#" class="zocial facebook icon"></a>
-                        <a href="#" class="zocial twitter icon"></a>
-                        <a href="#" class="zocial tumblr icon"></a>
-                        <a href="#" class="zocial gmail icon"></a>
-                        <a href="#" class="zocial pinterest icon"></a>
+                        <a href="https://www.facebook.com/pages/Ugrade/557436500934481" class="zocial facebook icon"></a>
+                        <a href="https://twitter.com/Ugrade1" class="zocial twitter icon"></a>
+                        <a href="mailto:ugrade.startup@gmail.com" class="zocial gmail icon"></a>
+                        <a href="http://www.linkedin.com/groups/Ugrade-4833031/about" class="zocial linkedin icon"></a>
                         
                         <div class="well">
                             <h4>Contribuisci</h4>
                             <p>
                                 Aiutaci a creare un prodotto che ti aiuti.
                             </p>
-                            <a class="btn btn-large" href="#">
+                            <a class="btn btn-large" href="http://www.surveymonkey.com/s/CNRQVVD" target="_blank">
                                 <i class="icon-map-marker"></i> Partecipa al sondaggio
                             </a>
                             <hr />
