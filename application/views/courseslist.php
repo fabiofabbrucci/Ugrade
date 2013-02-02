@@ -45,11 +45,11 @@
                                 echo "<h2><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a></h2>";
                             ?>
                             <div class="progress">
-                                <div class="bar bar-success" style="width: 35%;">35%</div>
-                                <div class="bar bar-warning" style="width: 20%;">20%</div>
-                                <div class="bar bar-danger" style="width: 10%;">10%</div>
-                                <div class="bar bar-info" style="width: 10%;">10%</div>
-                                <div class="bar bar-success" style="width: 25%;">25%</div>
+                                <div class="bar bar-success" style="width: 35%;" rel="tooltip" title="Skill 1">35%</div>
+                                <div class="bar bar-warning" style="width: 20%;" rel="tooltip" title="Skill 2">20%</div>
+                                <div class="bar bar-danger" style="width: 10%;" rel="tooltip" title="Skill 3">10%</div>
+                                <div class="bar bar-info" style="width: 10%;" rel="tooltip" title="Skill 4">10%</div>
+                                <div class="bar bar-success" style="width: 25%;" rel="tooltip" title="Skill 5">25%</div>
                             </div>
                             <div class="clearfix"></div>
                         </article>
@@ -63,6 +63,7 @@
         </div>
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap-transition.js"></script>
-        <script src="/js/home.js"></script>
+        <script src="/js/bootstrap-tooltip.js"></script>
+        <script src="/js/courselist.js"></script>
     </body>
 </html> 
