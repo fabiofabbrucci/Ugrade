@@ -80,3 +80,15 @@ body {
     margin-top: 8px;
     font-size: 2em;
 }
+
+#course_list article{
+    padding: 20px;
+}
+
+#course_list article:hover{
+    background-color: #dddddd;
+}
+
+#course_list article .pull-right{
+    text-align: right;
+}
