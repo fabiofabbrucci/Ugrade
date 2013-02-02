@@ -35,11 +35,12 @@
 
                 <div class="hero-unit">
                     <h1>The best way to make academic decisions!</h1>
-                    <p>Trova oggi il corso in base ai giudizi delle altre persone.</p>
+                    <p>Find students feedback and choose the right program for you.</p>
+                    
                     <form action="/index.php/uni/course" method="POST" id="search_form" class="form-horizontal">
-                        <input type="text" placeholder="Università, corso o master" name="" />
-                        <input type="submit" class="btn btn-primary" value="Cerca" />
-                        <a href="" id="adv_search">Ricerca avanzata</a>
+                        <input type="text" placeholder="University, program, master ..." name="" />
+                        <input type="submit" class="btn btn-primary" value="Find" />
+                        <a href="" id="adv_search">Advanced search</a>
                         <div id="div_adv_search" class="hide">
                             <label>Country</label>
                             <select>
@@ -75,28 +76,33 @@
                         <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
                     </div>
                     <div class="span6">
-                        <a href="https://www.facebook.com/pages/Ugrade/557436500934481" class="zocial facebook icon"></a>
-                        <a href="https://twitter.com/Ugrade1" class="zocial twitter icon"></a>
-                        <a href="mailto:ugrade.startup@gmail.com" class="zocial gmail icon"></a>
-                        <a href="http://www.linkedin.com/groups/Ugrade-4833031/about" class="zocial linkedin icon"></a>
                         
                         <div class="well">
-                            <h4>Contribuisci</h4>
+                            <a href="https://www.facebook.com/pages/Ugrade/557436500934481" class="zocial facebook icon"></a>
+                            <a href="https://twitter.com/Ugrade1" class="zocial twitter icon"></a>
+                            <a href="mailto:ugrade.startup@gmail.com" class="zocial gmail icon"></a>
+                            <a href="http://www.linkedin.com/groups/Ugrade-4833031/about" class="zocial linkedin icon"></a>
+                            
+                            <hr />
+                            
+                            <h4>Contribute</h4>
                             <p>
-                                Aiutaci a creare un prodotto che ti aiuti.
+                                Let us to improve our service
                             </p>
                             <a class="btn btn-large" href="http://www.surveymonkey.com/s/CNRQVVD" target="_blank">
-                                <i class="icon-map-marker"></i> Partecipa al sondaggio
+                                <i class="icon-ok-sign"></i> Join the survey
                             </a>
+                            
                             <hr />
-                            <h4>Iscriviti alla newsletter</h4>
-                            <a href="http://eepurl.com/uQE5v" target="_blank" class="btn btn-large"><i class="icon-envelope"></i> Subscribe</a>
+                            
+                            <h4>Keep in touch</h4>
+                            <a href="http://eepurl.com/uQE5v" target="_blank" class="btn btn-large"><i class="icon-envelope"></i> Subscribe our newsletter</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="footer">
-                    <p>&copy; Company 2013</p>
+                    <p>&copy; Ugrade 2013</p>
                 </div>
 
             </div>
