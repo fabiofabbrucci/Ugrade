@@ -7,12 +7,10 @@ class Uni extends CI_Controller {
 
    
 
-    public function index() {
-        $this->load->model('uni');
-        return $this->load->view('uni');
+    public function index($id = "") {
     }
 
-    public function course($id = "",$uni = "") {
+    public function course($id = "") {
         $this->load->database();
         if ($id == "") {
             
@@ -29,9 +27,19 @@ class Uni extends CI_Controller {
                 "courses"   =>  $c_final
             ));
         }
+                
+        $course = $this->db->query('select * from program where id = ?',array($id))->first_row();
+
+        $c_final=array();
+
+        $tmp = array();
+        $tmp['corso'] = $course;
+        $tmp['uni']   = $this->db->query('select * from university where id = ?',array($course->university_id))->first_row();
+            
+
         
         return $this->load->view('coursesshow',array(
-            "course"        =>  $this->db->query('select * from program where id = ?',array($id))->first_row(),
+            "course"   =>  $tmp
         ));
         
     }

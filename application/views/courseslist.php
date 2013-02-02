@@ -16,16 +16,16 @@
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-inner">
                     <div class="container">
-                        <a class="brand" href="#">UGrade</a>
+                        <a class="brand" href="/index.php/">UGrade</a>
                         <div class="nav-collapse collapse">
                             <p class="navbar-text pull-right">
                             </p>
                             <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="/index.php/">Home</a></li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Team</a></li>
-                                <li><a href="index.php/uni/course">Programs</a></li>
-                            </ul>
+                                <li class="active"><a href="/index.php/uni/course">Programs</a></li>
+
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <ul>
                     <?php 
                     foreach($courses as $c){
-                        echo "<li><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a> presso ".$c['uni']->name."</li>";
+                        echo "<li><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a> presso <a href=\"/index.php/uni/index/".$c['uni']->id."\">".$c['uni']->name."</a></li>";
                     }
                     ?>
                     
