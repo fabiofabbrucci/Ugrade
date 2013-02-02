@@ -37,10 +37,13 @@ class Uni extends CI_Controller {
         $tmp['uni']        = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
         $tmp["questions"]  = $this -> db -> query('select * from question') -> result();
         $tmp["program_id"] = $id;
-        
+        $this->load->model('uni_model');
         return $this->load->view('coursesshow',array(
+            "course"    =>  $tmp,
+            "user"      =>  $c_final,
             "course"   =>  $tmp,
             "form_comment" => ( $message ? false: true),
+            "commenti"    =>  $this->uni_model->commenti($id)
         ));
         
     }
@@ -76,6 +79,11 @@ class Uni extends CI_Controller {
     		
     		$this -> db -> insert ("program_question", $data);
     	}
+    	$this->load->model('uni_model');
+    	return $this->load->view('coursesshow',array(
+    			"message" => "Dati inseriti",
+                        "commenti"    =>  $this->uni_model->commenti($program_id)
+    	));
         
         $this->course($program_id, 'Commento inserito');
     }
