@@ -38,13 +38,13 @@
                     <p>Find students feedback and choose the right program for you.</p>
 
                     <form action="/index.php/home" method="post" id="search_form" class="form-horizontal">
-                        <input type="text" placeholder="University, program, master ..." name="key" />
+                        <input type="text" name="key" value ="" placeholder="University, program, master ..."  />
                         <input type="submit" class="btn btn-primary" />
                         <a href="" id="adv_search">Advanced search</a>
                         <div id="div_adv_search" class="hide">
                             <label>Country</label>
                             <select name="country">
-                                <option></option>
+                                <option value=""></option>
                                 <?php
                                 foreach ($country as $c) {
                                     echo "<option value=\"" . $c->country . "\">" . $c->country . "</option>";
@@ -53,7 +53,7 @@
                             </select>
                             <label>Area</label>
                             <select name="area">
-                                <option></option>
+                                <option value=""></option>
                                 <?php
                                 foreach ($area as $c) {
                                     echo "<option value=\"" . $c->sector . "\">" . $c->sector . "</option>";
@@ -62,7 +62,7 @@
                             </select>
                             <label>Level</label>
                             <select name="livello">
-                                <option></option>
+                                <option value=""></option>
                                 <?php
                                 foreach ($livello as $c) {
                                     echo "<option value=\"" . $c->description . "\">" . $c->description . "</option>";
