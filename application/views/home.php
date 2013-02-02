@@ -76,9 +76,8 @@
                     <div class="span6">
                         <a href="https://www.facebook.com/pages/Ugrade/557436500934481" class="zocial facebook icon"></a>
                         <a href="https://twitter.com/Ugrade1" class="zocial twitter icon"></a>
-                        <a href="#" class="zocial tumblr icon"></a>
                         <a href="mailto:ugrade.startup@gmail.com" class="zocial gmail icon"></a>
-                        <a href="#" class="zocial linkedin icon"></a>
+                        <a href="http://www.linkedin.com/groups/Ugrade-4833031/about" class="zocial linkedin icon"></a>
                         
                         <div class="well">
                             <h4>Contribuisci</h4>
