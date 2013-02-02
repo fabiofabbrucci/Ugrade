@@ -23,11 +23,11 @@ class Home extends CI_Controller {
         }
         
         if($this->input->post('country')!="") {
-            $sql.= " and university_id in (select id from university where country like '".$this->input->post('country')."' "; 
+            $sql.= " and university_id in (select id from university where country like '".$this->input->post('country')."') "; 
         }
         
         if($this->input->post('livello')!="") {
-            $sql .= " and program_type_id in (select id from program_type where description like '".$this->input->post('livello')."'"; 
+            $sql .= " and program_type_id in (select id from program_type where description like '".$this->input->post('livello')."')"; 
         }
        
         if($this->input->post('key')!="") {
@@ -44,7 +44,7 @@ class Home extends CI_Controller {
         
            array_push($c_final,$tmp);
         }
-        return $this->load->view('home', array(
+        return $this->load->view('homesearch', array(
                     "country" => $this->db->query('select * from university group by country')->result(),
                     "livello" => $this->db->query('select * from program_type')->result(),
                     "area" => $this->db->query('select * from program group by sector')->result(),

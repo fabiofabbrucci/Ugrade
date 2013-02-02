@@ -69,50 +69,31 @@
                             </select>
                         </div>
                     </form>
-                    <?php if ($courses!=null): ?>
-                        <h3>Lista dei corsi</h3>
-                        <ul>
-                            <?php
-                            foreach ($courses as $c) {
-                                echo "<li><a href=\"/index.php/uni/course/" . $c['corso']->id . "\">" . $c['corso']->name . "</a> presso <a href=\"/index.php/uni/index/" . $c['uni']->id . "\">" . $c['uni']->name . "</a></li>";
-                            }
-                            ?>
-                        </ul>
-                    <?php endif; ?>
 
                 </div>
-
-                <div class="row">
-                    <div class="span8">
-                        <h4>SubHeading</h4>
-                        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                        <h4>SubHeading</h4>
-                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-                        <h4>SubHeading</h4>
-                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-                    </div>
-                    <div class="span4">
-                        <div class="well">
-                            <center>
-                                <a href="https://www.facebook.com/pages/Ugrade/557436500934481" class="zocial facebook icon"></a>
-                                <a href="https://twitter.com/Ugrade1" class="zocial twitter icon"></a>
-                                <a href="mailto:ugrade.startup@gmail.com" class="zocial gmail icon"></a>
-                                <a href="http://www.linkedin.com/groups/Ugrade-4833031/about" class="zocial linkedin icon"></a>
-
-                                <hr />
-
-                                <h4>Contribute</h4>
-                                <a class="btn btn-large" href="http://www.surveymonkey.com/s/CNRQVVD" target="_blank">
-                                    <i class="icon-ok-sign"></i> Join the survey
-                                </a>
-
-                                <h4>Keep in touch</h4>
-                                <a href="http://eepurl.com/uQE5v" target="_blank" class="btn btn-large"><i class="icon-envelope"></i> Subscribe our newsletter</a>
-                            <center>
-                        </div>
-                    </div>
+                <h3>Sono stati trovati <?php echo count($courses); ?> risultati per la tua ricerca</h3>
+                <div id="course_list">
+                    <?php if(count($courses) != 0): ?>
+                    <?php foreach($courses as $c){ ?>
+                        <article>
+                            <div class="pull-right">
+                                <?php echo $c['uni']->name; ?> <i class="icon-home"></i><br />
+                                <b>14</b> feedbacks <i class="icon-star"></i>
+                            </div>
+                            <?php
+                                echo "<h2><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a></h2>";
+                            ?>
+                            <div class="progress">
+                                <div class="bar bar-success" style="width: 35%;" rel="tooltip" title="Skill 1">35%</div>
+                                <div class="bar bar-warning" style="width: 20%;" rel="tooltip" title="Skill 2">20%</div>
+                                <div class="bar bar-danger" style="width: 10%;" rel="tooltip" title="Skill 3">10%</div>
+                                <div class="bar bar-info" style="width: 10%;" rel="tooltip" title="Skill 4">10%</div>
+                                <div class="bar bar-success" style="width: 25%;" rel="tooltip" title="Skill 5">25%</div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </article>
+                    <?php } ?>
+                    <?php endif;?>
                 </div>
 
                 <div class="footer">
