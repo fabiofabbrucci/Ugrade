@@ -6,9 +6,9 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="/css/bootstrap.css" rel="stylesheet">
-        <link href="/css/application.css" rel="stylesheet">
-        <link href="/css/zocial.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/application.css" rel="stylesheet">
+        <link href="css/zocial.css" rel="stylesheet">
     </head>
     <body>
 
@@ -22,8 +22,9 @@
                             </p>
                             <ul class="nav">
                                 <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Come funziona</a></li>
+                                <li><a href="#">About</a></li>
                                 <li><a href="#">Team</a></li>
+                                <li><a href="index.php/uni/course">Programs</a></li>
                             </ul>
                         </div>
                     </div>
