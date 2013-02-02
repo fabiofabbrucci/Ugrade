@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE DATABASE  IF NOT EXISTS `ugrade` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `ugrade`;
 -- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
@@ -193,3 +194,5 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-02-02 17:04:41
+=======
+>>>>>>> 6b907fc17dec10df6f373bc8d5b91555c49eeab0

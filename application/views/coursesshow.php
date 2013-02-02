@@ -16,14 +16,15 @@
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-inner">
                     <div class="container">
-                        <a class="brand" href="#">UGrade</a>
+                        <a class="brand" href="/index.php/">UGrade</a>
                         <div class="nav-collapse collapse">
                             <p class="navbar-text pull-right">
                             </p>
                             <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Come funziona</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
                                 <li><a href="#">Team</a></li>
+                                <li class="active"><a href="/index.php/uni/course">Programs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -32,7 +33,8 @@
 
             <div class="container">
 
-                <?php echo $course->name; ?>
+                <?php echo $course['corso']->name; ?>
+                <?php echo $course['uni']->name; ?>
                 
                 <div class="footer">
                     <p>&copy; Company 2013</p>
