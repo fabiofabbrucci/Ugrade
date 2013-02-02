@@ -32,7 +32,10 @@
 
             <div class="container">
 
-                <?php echo $course->name; ?>
+                <div class="well">
+                    <h1><?php echo $course->name; ?></h1>
+                    <i class="icon-home"></i><?php echo $course['uni']->name; ?>
+                </div>
                 
                 <div class="footer">
                     <p>&copy; Company 2013</p>
@@ -40,7 +43,7 @@
 
             </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap-transition.js"></script>
         <script src="/js/home.js"></script>
     </body>
