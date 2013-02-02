@@ -38,8 +38,8 @@
                     <p>Find students feedback and choose the right program for you.</p>
 
                     <form action="/index.php/home" method="post" id="search_form" class="form-horizontal">
-                        <input type="text" placeholder="University, program, master ..." name="" />
-                        <input type="submit" name="key" class="btn btn-primary" />
+                        <input type="text" placeholder="University, program, master ..." name="key" />
+                        <input type="submit" class="btn btn-primary" />
                         <a href="" id="adv_search">Advanced search</a>
                         <div id="div_adv_search" class="hide">
                             <label>Country</label>
@@ -60,7 +60,7 @@
                                 }
                                 ?>
                             </select>
-                            <label>Livello</label>
+                            <label>Level</label>
                             <select name="livello">
                                 <option></option>
                                 <?php

@@ -24,14 +24,15 @@ class Home extends CI_Controller {
         
         $area = "%";
         if($this->input->post('area')!="") $area = $this->input->post('area'); 
-        
+       
         $key = "%";
         if($this->input->post('key')=="") $key = $this->input->post('key'); 
+
         
         $courses = $this->db->query("select * from program where sector like '".$sector."' and ".
                                    "university_id in (select id from university where country like '".$country."') and".
-                                    " program_type_id in (select id from program_type where description like '".$area."') and ".
-                                    "name like '".$key."'")->result();
+                                    " program_type_id in (select id from program_type where description like '".$area."') ".
+                                    "")->result();
         $c_final = array();
 
         foreach($courses as $c){
