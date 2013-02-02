@@ -42,13 +42,13 @@
                 </ul>
                 
                 <div class="footer">
-                    <p>&copy; Company 2013</p>
+                    <p>&copy; Ugrade 2013</p>
                 </div>
  
             </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="/js/bootstrap-transition.js"></script>
-        <script src="/js/home.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap-transition.js"></script>
+        <script src="js/home.js"></script>
     </body>
-</html>
+</html> 
