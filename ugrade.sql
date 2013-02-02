@@ -45,7 +45,7 @@ CREATE TABLE `program` (
 
 LOCK TABLES `program` WRITE;
 /*!40000 ALTER TABLE `program` DISABLE KEYS */;
-INSERT INTO `program` VALUES (1,'Patacologia Applicata',0,10,0,0),(2,'Fancazzismo',0,100,0,0),(3,'Megacorso figo',1,20000,0,0),(4,'Megacorso figo 2',1,30000,0,0),(5,'Megacorso figo 3',1,40000,0,0);
+INSERT INTO `program` VALUES (1,'Patacologia Applicata',0,10,1,1),(2,'Fancazzismo',0,100,1,2),(3,'Megacorso figo',1,20000,4,1),(4,'Megacorso figo 2',1,30000,4,2),(5,'Megacorso figo 3',1,40000,4,3);
 /*!40000 ALTER TABLE `program` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,12 +59,15 @@ DROP TABLE IF EXISTS `program_question`;
 CREATE TABLE `program_question` (
   `program_id` int(11) NOT NULL,
   `question_id` int(11) NOT NULL,
-  `comment` blob,
+  `user_account_id` int(11) NOT NULL,
+  `comment` text,
   `vote` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`program_id`,`question_id`),
+  PRIMARY KEY (`program_id`,`question_id`,`user_account_id`),
   KEY `fk_program_question_question1_idx` (`question_id`),
+  KEY `fk_program_question_user_account_idx` (`user_account_id`),
   CONSTRAINT `fk_program_question_program1` FOREIGN KEY (`program_id`) REFERENCES `program` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_program_question_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_program_question_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_program_question_user_account` FOREIGN KEY (`user_account_id`) REFERENCES `user_account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -74,6 +77,7 @@ CREATE TABLE `program_question` (
 
 LOCK TABLES `program_question` WRITE;
 /*!40000 ALTER TABLE `program_question` DISABLE KEYS */;
+INSERT INTO `program_question` VALUES (1,1,1,'kdsflfsdjlkfsjdkljklfsd',3),(1,1,2,'kjhdfsjkdfshkjfsdhjkhfsdjkhfsjkhjkfsd',1),(1,1,3,'fsdjkhfjkshfjksdhkjfsd',5);
 /*!40000 ALTER TABLE `program_question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +117,7 @@ CREATE TABLE `question` (
   `titolo` varchar(20) DEFAULT NULL,
   `text` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +126,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
+INSERT INTO `question` VALUES (1,'Ammissione','Come giudichi i criteri di ammissione'),(2,'Modalità corso','Come valuti le modalità del corso  (teorico, lavoro di gruppo, pratico, workshop, speaker, sviluppo '),(3,'Docenti','Come valuti la qualità dei docenti'),(4,'Contesto internazion','Hai ritenuto valido il contesto e le opportunità internazionali'),(5,'Stage','Come valuti il livello di stage proposti');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +170,7 @@ CREATE TABLE `user_account` (
   `password` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,6 +179,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
+INSERT INTO `user_account` VALUES (1,'christian.nastasi@gmail.com','passwd'),(2,'fabio.fabbrucci@gmail.com','passwd'),(3,'ofunwebservice@gmail.com','passwd');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-02 16:08:27
+-- Dump completed on 2013-02-02 17:04:41
