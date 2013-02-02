@@ -96,19 +96,20 @@
                 </div>
 
                 <?php 
-                	if ( isset ( $message )) {
-						echo "<div id='message'>$message</div>\n";	
-					}
+                    if ( isset ( $message )) {
+                        echo "<div id='message'>$message</div>\n";	
+                    }
                 ?>
                 
-                <form action="/uni/send_comment" method="POST" >
-                	<?php
-                		$counter = 0; 
-                		if (isset  ( $course) ) {
-                			foreach ($course["questions"] as $question) {  
-					?>
-                		
-                	E-mail <input type="text" name="email">
+                <form action="/index.php/uni/send_comment" method="POST" >
+                    E-mail <input type="text" name="email">
+                    <?php
+                        $counter = 0; 
+                        if (isset  ( $course) ) {
+                            foreach ($course["questions"] as $question) {  
+                            ?>
+
+                	
                		<div>
                			<input type="hidden" name="id<?php echo $counter; ?>" value="<?php echo $question -> id;?>">
                			<div>
