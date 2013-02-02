@@ -34,7 +34,7 @@
             <div class="container">
 
                 <div class="hero-unit">
-                    <h1>L'università come non l'hai mai cercata</h1>
+                    <h1>The best way to make academic decisions!</h1>
                     <p>Trova oggi il corso in base ai giudizi delle altre persone.</p>
                     <form action="/index.php/uni/course" method="POST" id="search_form" class="form-horizontal">
                         <input type="text" placeholder="Università, corso o master" name="" />
@@ -101,7 +101,7 @@
 
             </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="js/bootstrap-transition.js"></script>
         <script src="js/home.js"></script>
     </body>
