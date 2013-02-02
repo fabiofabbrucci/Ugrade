@@ -16,22 +16,25 @@ class Home extends CI_Controller {
                         "courses" => null
                     ));
         }
-        $sector = "%";
-        if($this->input->post('livello')!= "") $sector = $this->input->post('livello'); 
+        $sql = "select * from program where true ";
+
+        if($this->input->post('area')!= "") {
+            $sql.= " and sector like '".$this->input->post('area')."'"; 
+        }
         
-        $country = "%";
-        if($this->input->post('country')!="") $country  = $this->input->post('country'); 
+        if($this->input->post('country')!="") {
+            $sql.= " and university_id in (select id from university where country like '".$this->input->post('country')."') "; 
+        }
         
-        $area = "%";
-        if($this->input->post('area')!="") $area = $this->input->post('area'); 
+        if($this->input->post('livello')!="") {
+            $sql .= " and program_type_id in (select id from program_type where description like '".$this->input->post('livello')."')"; 
+        }
+       
+        if($this->input->post('key')!="") {
+            $sql .= " and name like '%".$this->input->post('key')."%'"; 
+        }
         
-        $key = "%";
-        if($this->input->post('key')=="") $key = $this->input->post('key'); 
-        
-        $courses = $this->db->query("select * from program where sector like '".$sector."' and ".
-                                   "university_id in (select id from university where country like '".$country."') and".
-                                    " program_type_id in (select id from program_type where description like '".$area."') and ".
-                                    "name like '".$key."'")->result();
+        $courses = $this->db->query($sql)->result();
         $c_final = array();
 
         foreach($courses as $c){
@@ -41,7 +44,7 @@ class Home extends CI_Controller {
         
            array_push($c_final,$tmp);
         }
-        return $this->load->view('home', array(
+        return $this->load->view('homesearch', array(
                     "country" => $this->db->query('select * from university group by country')->result(),
                     "livello" => $this->db->query('select * from program_type')->result(),
                     "area" => $this->db->query('select * from program group by sector')->result(),

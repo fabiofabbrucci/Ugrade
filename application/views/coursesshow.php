@@ -21,7 +21,7 @@
                             <p class="navbar-text pull-right">
                             </p>
                             <ul class="nav">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="/index.php/">Home</a></li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Team</a></li>
                                 <li class="active"><a href="/index.php/uni/course">Programs</a></li>
