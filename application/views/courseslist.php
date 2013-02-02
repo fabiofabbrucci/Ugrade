@@ -6,9 +6,9 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/application.css" rel="stylesheet">
-        <link href="css/zocial.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/application.css" rel="stylesheet">
+        <link href="/css/zocial.css" rel="stylesheet">
     </head>
     <body>
 
@@ -48,8 +48,8 @@
  
             </div>
         </div>
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap-transition.js"></script>
-        <script src="js/home.js"></script>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap-transition.js"></script>
+        <script src="/js/home.js"></script>
     </body>
 </html> 
