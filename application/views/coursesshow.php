@@ -73,19 +73,19 @@
                                 
                             <div class="bars">
                                 <div class="progress progress-info">
-                                    <div class="bar" style="width: 20%">1.3</div>
+                                    <div class="bar width20">1.3</div>
                                 </div>
                                 <div class="progress progress-success">
-                                    <div class="bar" style="width: 40%">2.1</div>
+                                    <div class="bar width40">2.1</div>
                                 </div>
                                 <div class="progress progress-warning">
-                                    <div class="bar" style="width: 60%">3.2</div>
+                                    <div class="bar width60">3.2</div>
                                 </div>
                                 <div class="progress progress-danger">
-                                    <div class="bar" style="width: 80%">4</div>
+                                    <div class="bar width80">4</div>
                                 </div>
                                 <div class="progress progress-warning">
-                                    <div class="bar" style="width: 12%">0.8</div>
+                                    <div class="bar width12">0.8</div>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
