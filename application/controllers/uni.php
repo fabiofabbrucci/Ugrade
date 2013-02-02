@@ -36,10 +36,11 @@ class Uni extends CI_Controller {
         $tmp['corso']      = $course;
         $tmp['uni']        = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
         $tmp["questions"]  = $this -> db -> query('select * from question') -> result();
-		$tmp["program_id"] = $id;
+        $tmp["program_id"] = $id;
         
         return $this->load->view('coursesshow',array(
-            "course"   =>  $tmp
+            "course"    =>  $tmp,
+            "user"      =>  $c_final
         ));
         
     }

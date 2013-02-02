@@ -56,7 +56,37 @@
                         </div>
                         <hr />
                         <h2>Feedbacks</h2>
-                        
+                        <?php 
+                        ?>
+                        <?php foreach($user as $c):?>
+                            <div class="bs-docs-example well">
+                              <img src="http://www.gravatar.com/avatar/<?php echo md5("fabio.fabbrucci@gmail.com")?>" />
+                              <ul id="myTab" class="nav nav-tabs">
+                                <li><a href="#1" data-toggle="tab">Ammissione</a></li>
+                                <li><a href="#2" data-toggle="tab">Modalit&agrave; Corso</a></li>
+                                <li><a href="#3" data-toggle="tab">Docenti</a></li>
+                                <li><a href="#4" data-toggle="tab">Contesto Internazionale</a></li>
+                                <li><a href="#5" data-toggle="tab">Stage</a></li>
+                              </ul>
+                              <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="1">
+                                  <p><?php echo $c['1'];?></p>
+                                </div>
+                                <div class="tab-pane fade" id="2">
+                                  <p><?php echo $c['2'];?></p>
+                                </div>
+                                <div class="tab-pane fade" id="3">
+                                    <p><?php echo $c['3'];?></p>
+                                </div>
+                                <div class="tab-pane fade" id="4">
+                                    <p><?php echo $c['4'];?></p>
+                                </div>
+                                <div class="tab-pane fade" id="5">
+                                    <p><?php echo $c['5'];?></p>
+                                </div>
+                                 </div>
+                            </div>
+                        <?php endforeach;?>
                     </div>
                     <div class="span4">
                         <div class="well well-small" id="course_show_graphs">
@@ -141,6 +171,7 @@
         </div>
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap-transition.js"></script>
+        <script src="/js/bootstrap-tab.js"></script>
         <script src="/js/courseshow.js"></script>
     </body>
 </html>
