@@ -32,7 +32,7 @@
 
             <div class="container">
 
-                TITOLO CORSO
+                <?php echo $course->name; ?>
                 
                 <div class="footer">
                     <p>&copy; Company 2013</p>

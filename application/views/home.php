@@ -35,7 +35,7 @@
                 <div class="hero-unit">
                     <h1>L'università come non l'hai mai cercata</h1>
                     <p>Trova oggi il corso in base ai giudizi delle altre persone.</p>
-                    <form action="/uni/search" method="POST" id="search_form" class="form-horizontal">
+                    <form action="/uni/course" method="POST" id="search_form" class="form-horizontal">
                         <input type="text" placeholder="Università, corso o master" name="" />
                         <input type="submit" class="btn btn-primary" value="Cerca" />
                         <a href="" id="adv_search">Ricerca avanzata</a>
