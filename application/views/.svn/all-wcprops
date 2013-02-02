@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/ugrade/!svn/ver/7/application/views
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/ugrade/!svn/ver/1/application/views/index.html
+END
+home.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/ugrade/!svn/ver/7/application/views/home.php
+END
+courses.show.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/ugrade/!svn/ver/5/application/views/courses.show.php
+END
+courses.list.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/ugrade/!svn/ver/5/application/views/courses.list.php
+END
