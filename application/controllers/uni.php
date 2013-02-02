@@ -56,7 +56,7 @@ class Uni extends CI_Controller {
             $row = $result -> row ();
             $user_id = $row -> id;
     	}
-    	else if ( $this -> db -> num_rows == 0 ) {
+    	else if ( $result -> num_rows == 0 ) {
             $this -> db -> insert ( "user_account", array ("username" => $email, "password" => "passwd") );
             $user_id = $this -> db -> inserted_id ();
     	}else {

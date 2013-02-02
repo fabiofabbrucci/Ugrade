@@ -6,9 +6,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="/css/bootstrap.css" rel="stylesheet">
-        <link href="/css/application.css" rel="stylesheet">
-        <link href="/css/zocial.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet" />
+        <link href="/css/application.css" rel="stylesheet" />
+        <link href="/css/zocial.css" rel="stylesheet" />
+        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     </head>
     <body>
 
@@ -45,9 +46,10 @@
 
                         <a id="read_more">Read more ...</a>
                     </div>
-                    <hr />
-                    <h2>Feedbacks</h2>
 
+                    <hr />
+
+                    <h2>Feedbacks</h2>
                 </div>
                 <div class="span4">
                     <div class="well well-small" id="course_show_graphs">
@@ -86,56 +88,45 @@
                 </div>
             </div>
 
-            <?php 
-                if ( isset ( $message )) {
-                    echo "<div id='message'>$message</div>\n";	
-                }
-            ?>
-
-            <form action="/index.php/uni/send_comment" method="POST" >
-                <?php
-                    $counter = 0; 
-                    if ($form_comment) {
-                        ?>
-                        E-mail <input type="text" name="email">
-                        <input type="hidden" name="counter" value="5">
-                        <input type="hidden" name="program_id" value="<?php echo $course["program_id"]; ?>">
-                        <?php
-                        foreach ($course["questions"] as $question) {  
-                        ?>
-
-
-                    <div>
-                            <input type="hidden" name="id<?php echo $counter; ?>" value="<?php echo $question -> id;?>">
-                            <div>
-                                    <div><?php echo $question -> titolo; ?></div>
-                                    <div><?php echo $question -> text; ?></div>
+            <?php $counter = 0; ?>
+            <?php if ($form_comment) { ?>
+            <div class="well">
+                <h3>Rant this program</h3>
+                <form action="/index.php/uni/send_comment" method="POST">
+                    <label>Email</label>
+                    <input type="text" name="email">
+                    <input type="hidden" name="counter" value="5">
+                    <input type="hidden" name="program_id" value="<?php echo $course["program_id"]; ?>">
+                        <ul class="nav nav-tabs" id="tabs_comment">
+                        <?php foreach ($course["questions"] as $i=>$question) { ?>
+                            <li>
+                                <a href="#comment_question<?php echo $i; ?>" data-toggle="tab"><?php echo $question->titolo; ?></a>
+                            </li>
+                        <?php } ?>
+                        </ul>
+                        <div class="tab-content">
+                        <?php foreach ($course["questions"] as $i => $question) { ?>
+                            <div class="tab-pane active" id="comment_question<?php echo $i; ?>">
+                                <input type="hidden" name="id<?php echo $counter; ?>" value="<?php echo $question -> id;?>">
+                                <b><?php echo $question->text; ?></b><br />
+                                <input type="text" name="vote<?php echo $counter; ?>" max="100" min="0" placeholder="Rate from 0 to 100" /><br />
+                                <textarea placeholder="Put some text here" name="comment<?php echo $counter; ?>"></textarea>
+                                <?php $counter ++; ?>
                             </div>
-                            <div>
-                                    <input type="radio" name="vote<?php echo $counter; ?>" value="1">1
-                                                    <input type="radio" name="vote<?php echo $counter; ?>" value="2">2
-                                                    <input type="radio" name="vote<?php echo $counter; ?>" value="3" checked>3
-                                                    <input type="radio" name="vote<?php echo $counter; ?>" value="4">4
-                                                    <input type="radio" name="vote<?php echo $counter; ?>" value="5">5<br/>
-                                                    <textarea name="comment<?php echo $counter; ?>"></textarea>
-                            </div>
-                    </div>
-                    <?php
-                                            $counter ++; 
-                        }
-
-                    } else{
-                        echo $message;
-                    }
-                    ?>
-                    <input type="submit" >    
-            </form>      
+                        <?php } ?>
+                        </div>
+                    <input type="submit" value="Comment" class="btn btn-primary" >    
+                </form>      
+            </div>
+            <?php } ?>
+            
             <div class="footer">
                 <p>&copy; Company 2013</p>
             </div>
         </div>
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap-transition.js"></script>
+        <script src="/js/bootstrap-tab.js"></script>
         <script src="/js/courseshow.js"></script>
     </body>
 </html>

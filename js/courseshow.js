@@ -14,5 +14,6 @@ $(document).ready(function(){
             width: larghezza + "%"
         }, 1000);
     });
-    
+
+    $('#tabs_comment a:first').tab('show'); 
 });
