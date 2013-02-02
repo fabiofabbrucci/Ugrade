@@ -76,3 +76,7 @@ body {
 .progress{
     margin-bottom: 5px;
 }
+#course_show_graphs #ranking{
+    margin-top: 8px;
+    font-size: 2em;
+}

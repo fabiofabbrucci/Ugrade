@@ -60,8 +60,10 @@
                     </div>
                     <div class="span4">
                         <div class="well well-small" id="course_show_graphs">
+                            <div class="pull-right" id="ranking">
+                                <b>3</b>° di 15
+                            </div>
                             <h4>InfoGraphics</h4>
-                            <b>3</b>° di 15
                             <hr />
                             <div class="labels">
                                 skill 1<br />
