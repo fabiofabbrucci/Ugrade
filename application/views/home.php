@@ -94,14 +94,25 @@
 
                         <div class="row">
                             <div class="span8">
-                                <h4>SubHeading</h4>
-                                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                                <h3>Look for Alumni Experience</h3>
+                                <p>
+                                    Access to Alumni reviews, feedbacks and ratings on their academic program.
+                                </p>
 
-                                <h4>SubHeading</h4>
-                                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+                                <h3>Grade your university</h3>
+                                <p>
+                                    Evaluate admission processes, courses quality, professors, international environment and job opportunities of your university.
+                                </p>
 
-                                <h4>SubHeading</h4>
-                                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                                <h3>Leave your comment</h3>
+                                <p>
+                                    Support other students choice by sharing your experience and giving your feedback about the courses you attended.
+                                </p>
+                                
+                                <h3>Contribute to the first ranking made by students</h3>
+                                <p>
+                                    Give your help to create for the first time a reliable ranking of universities made by students for students.
+                                </p>
                             </div>
                             <div class="span4">
                                 <div class="well">
