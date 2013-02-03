@@ -25,7 +25,7 @@
             </a>
 
             <div class="hero-unit">
-                <h1>The best way to make academic decisions!</h1>
+                <h1>The best way to make your academic decisions!</h1>
                 <p>Find students feedback and choose the right program for you.</p>
 
                 <form action="/index.php/home" method="post" id="search_form" class="form-horizontal">
