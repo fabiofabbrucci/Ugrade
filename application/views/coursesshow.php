@@ -96,7 +96,10 @@
                     <?php foreach($commenti as $index => $c): ?>
                     <div class="well">
                         <div class="pull-left" style="margin-right: 10px;">
-                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']); ?>?s=150" />
+                            <p><?php echo "<pre>".$c['utenti']->name. " " .substr($c['utenti']->surname, 0, 1)."."."</pre>"?></p>
+                            
+                            <p><?php echo date("j F Y", strtotime($c['1']->date));?></p>
+                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>?s=150" />
                             <ul id="myTab" class="nav nav-pills nav-stacked">
                                 <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab">Ammissione</a></li>
                                 <li><a href="#<?php echo $index; ?>_2" data-toggle="tab">Modelit&agrave; Corso</a></li>
