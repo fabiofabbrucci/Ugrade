@@ -28,7 +28,7 @@
                 <form action="/index.php/home" method="post" id="search_form" class="form-horizontal">
                     <input type="text" name="key" value ="" placeholder="University, program, master ..."  />
                     <input type="submit" class="btn btn-primary" />
-                    <a href="" id="adv_search">Advanced search</a>
+                    <a href="#" id="adv_search">Advanced search</a>
                     <div id="div_adv_search" class="hide">
                         <label>Country</label>
                         <select name="country">
@@ -61,11 +61,16 @@
                 </form>
 
             </div>
+            <form action="/index.php/uni/compare" method="post">
+            <div class="pull-right">
+                <input type="submit" class="btn compare-button" value="Compare" />
+            </div>
             <h3>Sono stati trovati <?php echo count($courses); ?> risultati per la tua ricerca</h3>
             <div id="course_list">
                 <?php foreach($courses as $c){ ?>
                     <article>
                         <div class="pull-right">
+                            Compare <input type="checkbox" name="program[]" value="<?php echo $c['corso']->id; ?>" /><br />
                             <?php echo $c['uni']->name; ?> <i class="icon-home"></i><br />
                             <b><?php echo $c ["feedback_count"]; ?></b> feedbacks <i class="icon-star"></i>
                         </div>
@@ -76,12 +81,12 @@
                         <div class="progress" style="width:90%;display:inline-block;">
                         
                         <?php 
-                        	$colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info");
-                        	$counter = 0;
-                        	$n = count ($colors);
-                        	$avg = 0;
-                        	foreach ( $c['ranks'] as $rank ) {
-								$avg += $rank ["avg"];
+                            $colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info");
+                            $counter = 0;
+                            $n = count ($colors);
+                            $avg = 0;
+                            foreach ( $c['ranks'] as $rank ) {
+                                $avg += $rank ["avg"];
                         ?>
                         	<div class="bar <?php echo $colors [$counter %  $n]; ?>" style="width: <?php echo (($rank['avg']/100) * 20); ?>%;" rel="tooltip" title="<?php echo $rank['titolo'];?>"><?php printf ("%2.0f", $rank ["avg"]);?></div>
                        
@@ -97,6 +102,11 @@
                     </article>
                 <?php } ?>
             </div>
+            <div class="pull-right">
+                <input type="submit" class="btn compare-button" value="Compare" />
+            </div>
+            <div class="clearfix"></div>
+            </form>
 
             <div class="footer">
                 <p>&copy; Ugrade 2013</p>
@@ -106,6 +116,7 @@
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap-transition.js"></script>
         <script src="/js/bootstrap-tooltip.js"></script>
+        <script src="/js/home.js"></script>
         <script src="/js/courselist.js"></script>
     </body>
 </html> 
