@@ -132,7 +132,7 @@
                 <div class="span4">
                     <div class="well well-small" id="course_show_graphs">
                         <div class="pull-right" id="ranking">
-                            <b><?php echo $course["rank_position"]; ?></b>° di <?php echo $course["total_courses"]; ?>    
+                            <!-- <b><?php //echo $course["rank_position"]; ?></b>° di <?php //echo $course["total_courses"]; ?>   -->  
                         </div>
                         <h4>InfoGraphics</h4>
                         <hr />
