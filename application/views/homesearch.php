@@ -72,13 +72,27 @@
                         <?php
                             echo "<h2><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a></h2>";
                         ?>
-                        <div class="progress" style="width:<?php echo rand(60,90); ?>%;">
-                            <div class="bar bar-success" style="width: 35%;" rel="tooltip" title="Skill 1">35%</div>
-                            <div class="bar bar-warning" style="width: 20%;" rel="tooltip" title="Skill 2">20%</div>
-                            <div class="bar bar-danger" style="width: 10%;" rel="tooltip" title="Skill 3">10%</div>
-                            <div class="bar bar-info" style="width: 10%;" rel="tooltip" title="Skill 4">10%</div>
-                            <div class="bar bar-success" style="width: 25%;" rel="tooltip" title="Skill 5">25%</div>
+                        
+                        <div class="progress" style="width:90%;display:inline-block;">
+                        
+                        <?php 
+                        	$colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info");
+                        	$counter = 0;
+                        	$n = count ($colors);
+                        	$avg = 0;
+                        	foreach ( $c['ranks'] as $rank ) {
+								$avg += $rank ["avg"];
+                        ?>
+                        	<div class="bar <?php echo $colors [$counter %  $n]; ?>" style="width: <?php echo (($rank['avg']/100) * 20); ?>%;" rel="tooltip" title="<?php echo $rank['titolo'];?>"><?php printf ("%2.0f", $rank ["avg"]);?></div>
+                       
+                        <?php 
+                        	$counter ++;
+						}
+							if ($counter != 0)
+								$avg /= $counter;
+						?>
                         </div>
+                        <?php printf ("<div style='display: inline-block; float: right;'>%d %%</div>", $avg); ?>
                         <div class="clearfix"></div>
                     </article>
                 <?php } ?>

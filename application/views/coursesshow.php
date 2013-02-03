@@ -130,7 +130,7 @@
                 <div class="span4">
                     <div class="well well-small" id="course_show_graphs">
                         <div class="pull-right" id="ranking">
-                            <b>3</b>° di 15    
+                            <b><?php echo $course["rank_position"]; ?></b>° di <?php echo $course["total_courses"]; ?>    
                         </div>
                         <h4>InfoGraphics</h4>
                         <hr />
@@ -144,24 +144,21 @@
                         </div>
 
                         <div class="bars">
-                            <div class="progress progress-info">
-                                <div class="bar width20">1.3</div>
-                            </div>
-                            <div class="progress progress-success">
-                                <div class="bar width40">2.1</div>
-                            </div>
-                            <div class="progress progress-warning">
-                                <div class="bar width60">3.2</div>
-                            </div>
-                            <div class="progress progress-danger">
-                                <div class="bar width80">4</div>
-                            </div>
-                            <div class="progress progress-warning">
-                                <div class="bar width12">0.8</div>
-                            </div>
+                        <?php 
+                        	$colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info");
+                        	$counter = 0;
+                        	$n = count ($colors);
+                        	foreach ( $course['ranks'] as $rank ) {
+                        ?>
+                        	<div class="progress" style="width:90%;">
+                        		<div class="bar <?php echo $colors [$counter %  $n]; ?>" style="width: <?php printf ("%d", $rank['avg']); ?>%;" title="<?php echo $rank['titolo'];?>"><?php printf ("%d", $rank ["avg"]);?></div>
+                       		</div>
+                        <?php 
+                        	$counter ++;
+						}
+						?>
                         </div>
                         <div class="clearfix"></div>
-
                     </div>
                 </div>
             </div>

@@ -75,7 +75,6 @@ class Uni extends CI_Controller {
     		$this -> db -> insert ("program_question", $data);
     	}
 
-    	$this->load->model('uni_model');
         $this->course($program_id, 'Commento inserito');
     }
     
@@ -83,10 +82,13 @@ class Uni extends CI_Controller {
     	$tmp = array();
     	$course = $this -> db -> query ( 'select * from program where id = ?', array($id) ) -> first_row ();
     	
-    	$tmp ['corso']      = $course;
-    	$tmp ['uni']        = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
-    	$tmp ["questions"]  = $this -> db -> query('select * from question') -> result();
-    	$tmp ["program_id"] = $id;
+    	$tmp ["rank_position"] = $this -> uni_model -> getRankPosition ( $id );
+    	$tmp ["total_courses"] = $this -> uni_model -> getTotalCourses ();
+    	$tmp ["ranks"]         = $this -> uni_model -> getRanks ($id);
+    	$tmp ['corso']         = $course;
+    	$tmp ['uni']           = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
+    	$tmp ["questions"]     = $this -> db -> query('select * from question') -> result();
+    	$tmp ["program_id"]    = $id;
     	
     	return $tmp;
     }

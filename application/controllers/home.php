@@ -17,9 +17,12 @@ class Home extends CI_Controller {
                         "courses" => null
                     ));
         }
-        $sql = "select * from program where true ";
+        
+        $sql = "select P.*, AVG(PQ.vote) as avg from program P " .
+          	   "left join program_question PQ on PQ.program_id = P.id " .
+        	   "where true ";
 
-        if($this->input->post('area')!= "") {
+        if($this->input->post('area') != "") {
             $sql.= " and sector like '".$this->input->post('area')."'"; 
         }
         
@@ -35,12 +38,15 @@ class Home extends CI_Controller {
             $sql .= " and name like '%".$this->input->post('key')."%'"; 
         }
         
+        $sql .= " group by P.id order by avg desc";
+        
         $courses = $this->db->query($sql)->result();
         $c_final = array();
 
         foreach($courses as $c){
            $tmp = array();
-           $tmp ['feedback_count'] = $this -> uni_model -> getFeedbackCount ($c -> id);
+           $tmp ["ranks"]          = $this -> uni_model -> getRanks ( $c -> id );
+           $tmp ['feedback_count'] = $this -> uni_model -> getFeedbackCount ( $c -> id );
            $tmp ['corso']          = $c;
            $tmp ['uni']            = $this -> db -> query ("select * from university where id = ".$c->university_id)->first_row();
         

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.29, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.5.28, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: ugrade
 -- ------------------------------------------------------
--- Server version	5.5.29-0ubuntu0.12.04.1
+-- Server version	5.5.28-0ubuntu0.12.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -65,6 +65,7 @@ CREATE TABLE `program_question` (
   `user_account_id` int(11) NOT NULL,
   `comment` text,
   `vote` tinyint(4) DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`program_id`,`question_id`,`user_account_id`),
   KEY `fk_program_question_question1_idx` (`question_id`),
   KEY `fk_program_question_user_account_idx` (`user_account_id`),
@@ -80,7 +81,7 @@ CREATE TABLE `program_question` (
 
 LOCK TABLES `program_question` WRITE;
 /*!40000 ALTER TABLE `program_question` DISABLE KEYS */;
-INSERT INTO `program_question` VALUES (1,1,1,'kdsflfsdjlkfsjdkljklfsd',3),(1,1,2,'kjhdfsjkdfshkjfsdhjkhfsdjkhfsjkhjkfsd',1),(1,1,3,'fsdjkhfjkshfjksdhkjfsd',5);
+INSERT INTO `program_question` VALUES (1,1,1,'222',22,'0000-00-00 00:00:00'),(1,1,4,'sdsadsadadsa',100,'2013-02-03 03:19:58'),(1,2,1,'',0,'0000-00-00 00:00:00'),(1,2,4,'fddfssfsdf',30,'2013-02-03 03:19:58'),(1,3,1,'',0,'0000-00-00 00:00:00'),(1,3,4,'dasadsadsads',69,'2013-02-03 03:19:58'),(1,4,1,'',0,'0000-00-00 00:00:00'),(1,4,4,'fsfdsfdsfsd',88,'2013-02-03 03:19:58'),(1,5,1,'',0,'0000-00-00 00:00:00'),(1,5,4,'dadsadasdas',50,'2013-02-03 03:19:58'),(2,1,4,'Non esiste',100,'2013-02-03 03:26:38'),(2,2,4,'Na pacchia',100,'2013-02-03 03:26:38'),(2,3,4,'E chi li ha visti?',100,'2013-02-03 03:26:38'),(2,4,4,'Vengono da tutto il mondo',100,'2013-02-03 03:26:38'),(2,5,4,'Nessuno si è sbattuto per organizzare alcunchè',0,'2013-02-03 03:26:38'),(3,1,5,'lkkldsjflksd',100,'2013-02-03 04:26:05'),(3,2,5,'2332223',33,'2013-02-03 04:26:05'),(3,3,5,'erjkjfdshkjfsdhjkfsd',90,'2013-02-03 04:26:05'),(3,4,5,'kjhgfdkjhgfkdjh',90,'2013-02-03 04:26:05'),(3,5,5,'jnvxckjnfdkj',80,'2013-02-03 04:26:05');
 /*!40000 ALTER TABLE `program_question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +174,7 @@ CREATE TABLE `user_account` (
   `password` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,7 +183,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,'christian.nastasi@gmail.com','passwd'),(2,'fabio.fabbrucci@gmail.com','passwd'),(3,'ofunwebservice@gmail.com','passwd');
+INSERT INTO `user_account` VALUES (1,'christian.nastasi@gmail.com','passwd'),(2,'fabio.fabbrucci@gmail.com','passwd'),(3,'ofunwebservice@gmail.com','passwd'),(4,'pippo@gmail.com','passwd'),(5,'pluto@gmail.com','passwd');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -195,4 +196,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-02 17:34:11
+-- Dump completed on 2013-02-03  8:14:50
