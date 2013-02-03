@@ -44,7 +44,7 @@ class Uni_Model extends CI_Model{
     public function getAvgRanks ( $course_id ) {
     	$result = $this -> db -> query
     	(
-    		"SELECT PQ.program_id, avg(vote) as avg " . 
+    		"SELECT PQ.program_id, ROUND(avg(vote)) as avg " . 
     		"FROM program_question PQ " . 
 			"WHERE PQ.program_id = ? " .
 			"GROUP BY PQ.program_id;",
