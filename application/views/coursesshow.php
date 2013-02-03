@@ -106,7 +106,7 @@
                     <?php foreach($commenti as $index => $c): ?>
                     <div class="well">
                         <div class="pull-left" style="margin-right: 10px;">
-                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>" /><br />
+                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>?d=http://ugrade.ofunwebservices.com/img/ugrade.gravatar.png" /><br />
                             <?php 
                                 echo $c['utenti']->name. " "; 
                                 if($c['utenti']->surname) { 
