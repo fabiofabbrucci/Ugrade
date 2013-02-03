@@ -5,6 +5,8 @@
         <title>Ugrade</title>
         <meta name="description" content="">
         <meta name="author" content="">
+        
+        <link rel="shortcut icon" href="/img/favicon.ico" />
 
         <link href="/css/bootstrap.css" rel="stylesheet" />
         <link href="/css/application.css" rel="stylesheet" />
