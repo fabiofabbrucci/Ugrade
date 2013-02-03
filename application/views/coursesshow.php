@@ -112,10 +112,10 @@
                         </div>
                         <div class="contenuti">
                             <ul id="myTab" class="nav nav-tabs">
-                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab">Ammissione</a></li>
-                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab">Modelit&agrave; Corso</a></li>
+                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab">Ammission</a></li>
+                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab">Modalit&agrave; Corso </a></li>
                                 <li><a href="#<?php echo $index; ?>_3" data-toggle="tab">Docenti</a></li>
-                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab">Internazionalization </a></li>
+                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab">Internazionalizzazione</a></li>
                                 <li><a href="#<?php echo $index; ?>_5" data-toggle="tab">Stage</a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
@@ -154,9 +154,9 @@
                         
                         <div class="labels">
                             Ammissione<br />
-                            Modalità corso<br />
+                            Modalit&agrave; Corso<br />
                             Docenti<br />
-                            Internazionalization<br />
+                            Internazionalizzazione<br />
                             Stage<br />
                         </div>
 
