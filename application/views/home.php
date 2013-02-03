@@ -9,6 +9,7 @@
         <link href="/css/bootstrap.css" rel="stylesheet">
         <link href="/css/application.css" rel="stylesheet">
         <link href="/css/zocial.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet" />
     </head>
     <body>
 

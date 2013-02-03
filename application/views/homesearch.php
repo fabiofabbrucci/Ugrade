@@ -9,6 +9,7 @@
         <link href="/css/bootstrap.css" rel="stylesheet">
         <link href="/css/application.css" rel="stylesheet">
         <link href="/css/zocial.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet" />
     </head>
     <body>
 
@@ -71,7 +72,7 @@
                         <?php
                             echo "<h2><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a></h2>";
                         ?>
-                        <div class="progress">
+                        <div class="progress" style="width:<?php echo rand(60,90); ?>%;">
                             <div class="bar bar-success" style="width: 35%;" rel="tooltip" title="Skill 1">35%</div>
                             <div class="bar bar-warning" style="width: 20%;" rel="tooltip" title="Skill 2">20%</div>
                             <div class="bar bar-danger" style="width: 10%;" rel="tooltip" title="Skill 3">10%</div>
