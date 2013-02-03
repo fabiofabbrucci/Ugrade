@@ -94,7 +94,7 @@ class Uni extends CI_Controller {
             $data ["question_id"] = $this->input->post("id$i");
             $data ["user_account_id"] = $user_id;
             $data ["comment"] = $this->input->post("comment$i");
-            $data ["vote"] = $this->input->post("vote$i");
+            $data ["vote"] = $this->input->post("vote$i") ? $this->input->post("vote$i") : null;
             $data ["date"] = date("Y-m-d H:i:s");
 
             $this->db->insert("program_question", $data);

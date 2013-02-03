@@ -112,6 +112,7 @@
                                 if($c['utenti']->surname) { 
                                     echo substr($c['utenti']->surname, 0, 1)."."; 
                                 }
+                                echo '<br />';
                             ?>
                             <i><?php echo date("d/m/y", strtotime($c['1']->date));?></i>
                         </div>
