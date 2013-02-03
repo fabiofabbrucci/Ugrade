@@ -27,8 +27,12 @@
             <div class="row">
                 <div class="span8">
                     <div class="well">
-                        <h1><?php echo $course['corso']->name; ?></h1>
-                        <i class="icon-home"></i> <?php echo $course['uni']->name; ?> <i class="icon-shopping-cart"></i> $<?php echo $course['corso']->cost; ?> <span class="badge badge-info">Business</span>
+                        <h1><?php echo $course['corso'] -> name; ?></h1>
+                        <i class="icon-home"></i> 
+                        <?php echo $course['uni']->name; ?>
+                        <i class="icon-shopping-cart"></i> $
+                        <?php echo $course['corso']->cost; ?> 
+                        <span class="badge badge-info">Business</span>
                     </div>
 
                     <div id="course_description">

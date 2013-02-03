@@ -4,46 +4,41 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Uni extends CI_Controller {
-
-   
-
-    public function index($id = "") {
+    public function index($id = "") 
+    {
+    	
     }
 
-    public function course($id = "", $message = null) {
-        $this->load->database();
+    public function course ($id = "", $message = null) {
+        $this -> load -> database();
+        
         if ($id == "") {
+            $courses = $this -> db -> query('select * from program')->result();
             
-            $courses = $this->db->query('select * from program')->result();
+            $c_final = array();
             
-            $c_final=array();
-            foreach($courses as $c){
-                $tmp = array();
+            foreach ( $courses as $c ){
+                $tmp          = array();
                 $tmp['corso'] = $c;
                 $tmp['uni']   = $this->db->query('select * from university where id = ?',array($c->university_id))->first_row();
-                array_push($c_final,$tmp);
+                array_push ( $c_final, $tmp );
             }
+            
             return $this->load->view('courseslist',array(
                 "courses"   =>  $c_final
             ));
         }
-                
-        $course = $this->db->query ( 'select * from program where id = ?', array($id) ) -> first_row ();
 
         $c_final=array();
 
-        $tmp = array();
-        $tmp['corso']      = $course;
-        $tmp['uni']        = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
-        $tmp["questions"]  = $this -> db -> query('select * from question') -> result();
-        $tmp["program_id"] = $id;
-        $this->load->model('uni_model');
-        return $this->load->view('coursesshow',array(
-            "course"    =>  $tmp,
-            "user"      =>  $c_final,
-            "course"   =>  $tmp,
-            "form_comment" => ( $message ? false: true),
-            "commenti"    =>  $this->uni_model->commenti($id)
+        
+        $this -> load -> model('uni_model');
+        
+        return $this -> load -> view ('coursesshow',array(
+            "user"         =>  $c_final,
+            "course"       =>  $this -> getCourse ($id),
+            "form_comment" =>  ( $message ? false: true ),
+            "commenti"     =>  $this -> uni_model -> commenti ( $id )
         ));
         
     }
@@ -79,12 +74,27 @@ class Uni extends CI_Controller {
     		
     		$this -> db -> insert ("program_question", $data);
     	}
+
     	$this->load->model('uni_model');
-    	return $this->load->view('coursesshow',array(
-    			"message" => "Dati inseriti",
-                        "commenti"    =>  $this->uni_model->commenti($program_id)
+/*    	
+     	return $this -> load -> view('coursesshow', array (
+    			"message"  => "Dati inseriti",
+                "commenti" =>  $this -> uni_model -> commenti($program_id)
     	));
-        
+*/        
         $this->course($program_id, 'Commento inserito');
     }
+    
+    private function getCourse ( $id ) {
+    	$tmp = array();
+    	$course = $this -> db -> query ( 'select * from program where id = ?', array($id) ) -> first_row ();
+    	
+    	$tmp ['corso']      = $course;
+    	$tmp ['uni']        = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
+    	$tmp ["questions"]  = $this -> db -> query('select * from question') -> result();
+    	$tmp ["program_id"] = $id;
+    	
+    	return $tmp;
+    }
+    
 }
