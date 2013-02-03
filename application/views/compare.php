@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>UGrade</title>
+        <title>Ugrade</title>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -26,9 +26,9 @@
 
             <table class="table">
                 <tr>
-                    <th></th>
+                    <th width="20%"></th>
                     <?php foreach($courses as $c){ ?>
-                    <th>
+                    <th width="<?php echo 80/count($courses); ?>%">
                         <a href="/index.php/uni/course/<?php echo $c['corso']->id; ?>"><?php echo $c['corso']->name; ?>
                     </th>
                     <?php } ?>

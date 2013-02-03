@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>UGrade</title>
+        <title>Ugrade</title>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -58,7 +58,7 @@
                     <?php $counter = 0; ?>
                     <?php if ($form_comment) { ?>
                     <div class="well">
-                        <h3>Rant this program</h3>
+                        <h3>Grade this program</h3>
                         <form action="/index.php/uni/send_comment" method="POST" class="form_comment">
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" placeholder="Email">
