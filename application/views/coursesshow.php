@@ -52,7 +52,11 @@
                     </div>
 
                     <hr />
-                    
+                    <?php 
+                        if($message != null){
+                            echo "<pre>".$message."</pre>";
+                        }
+                    ?>
                     <h2>Feedbacks</h2>
                     
                     <?php $counter = 0; ?>
@@ -62,6 +66,12 @@
                         <form action="/index.php/uni/send_comment" method="POST" class="form_comment">
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span><input type="text" name="name" placeholder="Name">
+                            </div>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span><input type="text" name="surname" placeholder="Surname">
                             </div>
                             <input type="hidden" name="counter" value="5">
                             <input type="hidden" name="program_id" value="<?php echo $course["program_id"]; ?>">
@@ -92,19 +102,21 @@
                         </form>      
                     </div>
                     <?php } ?>
-                    
+
                     <?php foreach($commenti as $index => $c): ?>
                     <div class="well">
                         <div class="pull-left" style="margin-right: 10px;">
-                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']); ?>" />
+                            <h3><?php echo $c['utenti']->name. " " .substr($c['utenti']->surname, 0, 1)."."?></h3>
+                            <ul id="myTab" class="nav nav-pills nav-stacked">
+                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>?s=150" />
                         </div>
                         <div class="contenuti">
                             <ul id="myTab" class="nav nav-tabs">
-                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab">Ammissione</a></li>
-                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab">Modelit&agrave; Corso</a></li>
-                                <li><a href="#<?php echo $index; ?>_3" data-toggle="tab">Docenti</a></li>
-                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab">Internazionalization </a></li>
-                                <li><a href="#<?php echo $index; ?>_5" data-toggle="tab">Stage</a></li>
+                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab"><?php echo $questions['1']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab"><?php echo $questions['2']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_3" data-toggle="tab"><?php echo $questions['3']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab"><?php echo $questions['4']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_5" data-toggle="tab"><?php echo $questions['5']->titolo ?></a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
                                 <div class="tab-pane fade in active" id="<?php echo $index; ?>_1">
@@ -124,6 +136,9 @@
                                 </div>
                             </div>
                         </div>
+                                                    
+                        <h6 align="right"><?php echo date("d/m/y", strtotime($c['1']->date));?></h6>
+
                         <div class="clearfix"></div>
                     </div>
                     <?php endforeach;?>
@@ -138,11 +153,11 @@
                         <hr />
                         
                         <div class="labels">
-                            Ammissione<br />
-                            Modalità corso<br />
-                            Docenti<br />
-                            Internazionalization<br />
-                            Stage<br />
+                            <?php echo $questions['1']->titolo ?><br />
+                            <?php echo $questions['2']->titolo ?><br />
+                            <?php echo $questions['3']->titolo ?><br />
+                            <?php echo $questions['4']->titolo ?><br />
+                            <?php echo $questions['5']->titolo ?><br />
                         </div>
 
                         <div class="bars">

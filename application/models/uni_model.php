@@ -4,7 +4,7 @@
 class Uni_Model extends CI_Model{
     
     public function commenti($id){
-        $users = $this->db->query("select distinct(user_account_id) from program_question where program_id = $id")->result();
+        $users = $this->db->query("select distinct(user_account_id) from program_question where program_id = $id order by date desc")->result();
         $c_final = array();
         foreach($users as $u){
             $tmp = array();
@@ -14,7 +14,7 @@ class Uni_Model extends CI_Model{
             $tmp['4']       = $this->db->query("select * from program_question where question_id = 4 and user_account_id = ".$u->user_account_id)->first_row();
             $tmp['5']       = $this->db->query("select * from program_question where question_id = 5 and user_account_id = ".$u->user_account_id)->first_row();
             $username       = $this->db->query("select * from user_account where id = ".$u->user_account_id)->first_row();
-            $tmp['utenti']  = $username->username;  
+            $tmp['utenti']  = $username;  
             array_push($c_final,$tmp);
         }
         return $c_final;
