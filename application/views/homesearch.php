@@ -74,21 +74,25 @@
                             <?php echo $c['uni']->name; ?> <i class="icon-home"></i><br />
                             <b><?php echo $c ["feedback_count"]; ?></b> feedbacks <i class="icon-star"></i>
                         </div>
-                        <?php if(count($c['ranks']) > 0) { ?>
-                            <?php
-                                $media_globel = 0;
-                                foreach ( $c['ranks'] as $rank ) {
-                                    $media_globel += $rank ["avg"];
-                                }
-                                $somma_medie = $media_globel;
+                        <?php
+                            $media_globel = 0;
+                            foreach ( $c['ranks'] as $rank ) {
+                                $media_globel += $rank ["avg"];
+                            }
+                            $somma_medie = $media_globel;
+                            if(count($c['ranks'])>0){
                                 $media_globel = $media_globel / count($c['ranks']);
-                            ?>
-                            <h2>
-                            <?php
-                                echo "<a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a>";
-                            ?>
-                                <?php printf ("<small>%d<span> / 100</span></small>", $media_globel); ?>
-                            </h2>
+                            }
+                        ?>
+                        <h2>
+                        <?php
+                            echo "<a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a>";
+                        ?>
+                            <?php if(count($c['ranks'])>0){ ?>
+                            <?php printf ("<small>%d<span> / 100</span></small>", $media_globel); ?>
+                            <?php } ?>
+                        </h2>
+                        <?php if(count($c['ranks']) > 0) { ?>
 
                             <div class="progress" style="width:<?php echo $media_globel; ?>%; display:inline-block;">
 
