@@ -174,6 +174,8 @@ CREATE TABLE `user_account` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) CHARACTER SET big5 DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
@@ -185,7 +187,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,'christian.nastasi@gmail.com','passwd'),(2,'fabio.fabbrucci@gmail.com','passwd'),(3,'ofunwebservice@gmail.com','passwd'),(4,'pippo@gmail.com','passwd'),(5,'pluto@gmail.com','passwd');
+INSERT INTO `user_account` VALUES (1,'christian.nastasi@gmail.com','passwd',null,null),(2,'fabio.fabbrucci@gmail.com','passwd',null,null),(3,'ofunwebservice@gmail.com','passwd',null,null),(4,'pippo@gmail.com','passwd',null,null),(5,'pluto@gmail.com','passwd',null,null);
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -106,9 +106,15 @@
                     <?php foreach($commenti as $index => $c): ?>
                     <div class="well">
                         <div class="pull-left" style="margin-right: 10px;">
-                            <h3><?php echo $c['utenti']->name. " " .substr($c['utenti']->surname, 0, 1)."."?></h3>
+                            <?php 
+                                echo $c['utenti']->name. " "; 
+                                if($c['utenti']->surname) { 
+                                    echo substr($c['utenti']->surname, 0, 1)."."; 
+                                }
+                                ?>
                             <ul id="myTab" class="nav nav-pills nav-stacked">
-                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>?s=150" />
+                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>" /><br />
+                            <i><?php echo date("d/m/y", strtotime($c['1']->date));?></i>
                         </div>
                         <div class="contenuti">
                             <ul id="myTab" class="nav nav-tabs">
@@ -137,8 +143,6 @@
                             </div>
                         </div>
                                                     
-                        <h6 align="right"><?php echo date("d/m/y", strtotime($c['1']->date));?></h6>
-
                         <div class="clearfix"></div>
                     </div>
                     <?php endforeach;?>
