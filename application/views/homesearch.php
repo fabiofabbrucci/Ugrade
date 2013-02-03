@@ -67,7 +67,7 @@
                     <article>
                         <div class="pull-right">
                             <?php echo $c['uni']->name; ?> <i class="icon-home"></i><br />
-                            <b>14</b> feedbacks <i class="icon-star"></i>
+                            <b><?php echo $c ["feedback_count"]; ?></b> feedbacks <i class="icon-star"></i>
                         </div>
                         <?php
                             echo "<h2><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a></h2>";

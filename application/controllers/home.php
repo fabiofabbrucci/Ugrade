@@ -6,7 +6,8 @@ if (!defined('BASEPATH'))
 class Home extends CI_Controller {
 
     public function index() {
-            $this->load->database();
+        $this -> load -> database();
+        $this -> load -> model('uni_model');
 
         if ($this->input->post('key') == false && $this->input->post('country') == false && $this->input->post('area') == false && $this->input->post('livello') == false) {
             return $this->load->view('home', array(
@@ -39,8 +40,9 @@ class Home extends CI_Controller {
 
         foreach($courses as $c){
            $tmp = array();
-           $tmp['corso'] = $c;
-           $tmp['uni'] = $this->db->query("select * from university where id = ".$c->university_id)->first_row();
+           $tmp ['feedback_count'] = $this -> uni_model -> getFeedbackCount ($c -> id);
+           $tmp ['corso']          = $c;
+           $tmp ['uni']            = $this -> db -> query ("select * from university where id = ".$c->university_id)->first_row();
         
            array_push($c_final,$tmp);
         }
@@ -51,5 +53,4 @@ class Home extends CI_Controller {
                     "courses" => $c_final
                 ));
     }
-
 }

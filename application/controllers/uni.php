@@ -75,7 +75,7 @@ class Uni extends CI_Controller {
     		$this -> db -> insert ("program_question", $data);
     	}
 
-    	$this->load->model('uni_model');
+    	//$this->load->model('uni_model');
 /*    	
      	return $this -> load -> view('coursesshow', array (
     			"message"  => "Dati inseriti",

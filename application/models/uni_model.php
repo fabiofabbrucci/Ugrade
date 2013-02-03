@@ -19,4 +19,22 @@ class Uni_Model extends CI_Model{
         }
         return $c_final;
     }
+    
+    public function getFeedbackCount ($course_id) {
+    	$result = $this -> db -> query (
+    			"select count(*) as count " .
+    			"from program_question " .
+    			"where program_id = ?" .
+    			"group by program_id ",
+    			array ($course_id)
+    	);
+    	
+    	if ( $result -> num_rows () > 0) {
+    		$row = $result -> first_row ();
+    	
+    		return $row -> count;
+    	}
+    	
+    	return 0;
+    }
 }
