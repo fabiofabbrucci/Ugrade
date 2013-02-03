@@ -93,33 +93,36 @@
                     </div>
                     <?php } ?>
                     
-                    <?php foreach($commenti as $c): ?>
-                    <div class="bs-docs-example well">
-                        <img src="http://www.gravatar.com/avatar/<?php echo md5("fabio.fabbrucci@gmail.com"); ?>" />
-                        <ul id="myTab" class="nav nav-tabs">
-                        <li><a href="#1" data-toggle="tab">Ammissione</a></li>
-                        <li><a href="#2" data-toggle="tab">Modelit&agrave; Corso</a></li>
-                        <li><a href="#3" data-toggle="tab">Docenti</a></li>
-                        <li><a href="#4" data-toggle="tab">Contesto Internazionale</a></li>
-                        <li><a href="#5" data-toggle="tab">Stage</a></li>
-                        </ul>
+                    <?php foreach($commenti as $index => $c): ?>
+                    <div class="well">
+                        <div class="pull-left" style="margin-right: 10px;">
+                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']); ?>?s=150" />
+                            <ul id="myTab" class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab">Ammissione</a></li>
+                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab">Modelit&agrave; Corso</a></li>
+                                <li><a href="#<?php echo $index; ?>_3" data-toggle="tab">Docenti</a></li>
+                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab">Internazionalization </a></li>
+                                <li><a href="#<?php echo $index; ?>_5" data-toggle="tab">Stage</a></li>
+                            </ul>
+                        </div>
                         <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade in active" id="1">
-                            <p><?php if(count($c['1'])==1) echo $c['1']->comment ; ?></p>
+                            <div class="tab-pane fade in active" id="<?php echo $index; ?>_1">
+                                <p><?php if(count($c['1'])==1) echo $c['1']->comment ; ?></p>
+                            </div>
+                            <div class="tab-pane fade" id="<?php echo $index; ?>_2">
+                                <p><?php if(count($c['2'])==1) echo $c['2']->comment; ?></p>
+                            </div>
+                            <div class="tab-pane fade" id="<?php echo $index; ?>_3">
+                                <p><?php if(count($c['3'])==1) echo $c['3']->comment; ?></p>
+                            </div>
+                            <div class="tab-pane fade" id="<?php echo $index; ?>_4">
+                                <p><?php if(count($c['4'])==1) echo $c['4']->comment; ?></p>
+                            </div>
+                            <div class="tab-pane fade" id="<?php echo $index; ?>_5">
+                                <p><?php if(count($c['5'])==1) echo $c['5']->comment; ?></p>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="2">
-                            <p><?php if(count($c['2'])==1) echo $c['2']->comment; ?></p>
-                        </div>
-                        <div class="tab-pane fade" id="3">
-                            <p><?php if(count($c['3'])==1) echo $c['3']->comment; ?></p>
-                        </div>
-                        <div class="tab-pane fade" id="4">
-                            <p><?php if(count($c['4'])==1) echo $c['4']->comment; ?></p>
-                        </div>
-                        <div class="tab-pane fade" id="5">
-                            <p><?php if(count($c['5'])==1) echo $c['5']->comment; ?></p>
-                        </div>
-                        </div>
+                        <div class="clearfix"></div>
                     </div>
                     <?php endforeach;?>
                     
