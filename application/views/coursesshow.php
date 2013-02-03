@@ -102,7 +102,7 @@
                         </form>      
                     </div>
                     <?php } ?>
-                    
+
                     <?php foreach($commenti as $index => $c): ?>
                     <div class="well">
                         <div class="pull-left" style="margin-right: 10px;">
@@ -112,11 +112,11 @@
                         </div>
                         <div class="contenuti">
                             <ul id="myTab" class="nav nav-tabs">
-                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab">Ammission</a></li>
-                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab">Modalit&agrave; Corso </a></li>
-                                <li><a href="#<?php echo $index; ?>_3" data-toggle="tab">Docenti</a></li>
-                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab">Internazionalizzazione</a></li>
-                                <li><a href="#<?php echo $index; ?>_5" data-toggle="tab">Stage</a></li>
+                                <li class="active"><a href="#<?php echo $index; ?>_1" data-toggle="tab"><?php echo $questions['1']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_2" data-toggle="tab"><?php echo $questions['2']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_3" data-toggle="tab"><?php echo $questions['3']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_4" data-toggle="tab"><?php echo $questions['4']->titolo ?></a></li>
+                                <li><a href="#<?php echo $index; ?>_5" data-toggle="tab"><?php echo $questions['5']->titolo ?></a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
                                 <div class="tab-pane fade in active" id="<?php echo $index; ?>_1">
@@ -153,11 +153,11 @@
                         <hr />
                         
                         <div class="labels">
-                            Ammissione<br />
-                            Modalit&agrave; Corso<br />
-                            Docenti<br />
-                            Internazionalizzazione<br />
-                            Stage<br />
+                            <?php echo $questions['1']->titolo ?><br />
+                            <?php echo $questions['2']->titolo ?><br />
+                            <?php echo $questions['3']->titolo ?><br />
+                            <?php echo $questions['4']->titolo ?><br />
+                            <?php echo $questions['5']->titolo ?><br />
                         </div>
 
                         <div class="bars">

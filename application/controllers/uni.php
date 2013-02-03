@@ -42,20 +42,21 @@ class Uni extends CI_Controller {
 
         $this->load->model('uni_model');
 
-        $question = array();
-        $question['1'] = $this->db->query("select * from question where id = 1")->first_row();
-        $question['2'] = $this->db->query("select * from question where id = 2")->first_row();
-        $question['3'] = $this->db->query("select * from question where id = 3")->first_row();
-        $question['4'] = $this->db->query("select * from question where id = 4")->first_row();
-        $question['5'] = $this->db->query("select * from question where id = 5")->first_row();
         
+
         return $this->load->view('coursesshow', array(
                     "user"          => $c_final,
                     "course"        => $this->getCourse($id),
                     "form_comment"  => ( $message ? false : true ),
                     "commenti"      => $this->uni_model->commenti($id),
                     "message"       => $message,
-                    "question"      => $question
+                    "questions"      => array(
+                        "1"     =>  $this->db->query("select * from question where id = 1")->first_row(),
+                        "2"     =>  $this->db->query("select * from question where id = 2")->first_row(),
+                        "3"     =>  $this->db->query("select * from question where id = 3")->first_row(),
+                        "4"     =>  $this->db->query("select * from question where id = 4")->first_row(),
+                        "5"     =>  $this->db->query("select * from question where id = 5")->first_row()
+                    )
                 ));
     }
 
