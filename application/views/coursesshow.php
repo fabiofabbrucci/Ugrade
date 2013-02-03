@@ -9,7 +9,7 @@
         <link href="/css/bootstrap.css" rel="stylesheet" />
         <link href="/css/application.css" rel="stylesheet" />
         <link href="/css/zocial.css" rel="stylesheet" />
-        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <link href="http://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet" />
     </head>
     <body>
 
@@ -59,9 +59,10 @@
                     <?php if ($form_comment) { ?>
                     <div class="well">
                         <h3>Rant this program</h3>
-                        <form action="/index.php/uni/send_comment" method="POST">
-                            <label>Email</label>
-                            <input type="text" name="email">
+                        <form action="/index.php/uni/send_comment" method="POST" class="form_comment">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" placeholder="Email">
+                            </div>
                             <input type="hidden" name="counter" value="5">
                             <input type="hidden" name="program_id" value="<?php echo $course["program_id"]; ?>">
                                 <ul class="nav nav-tabs" id="tabs_comment">
@@ -76,7 +77,12 @@
                                     <div class="tab-pane active" id="comment_question<?php echo $i; ?>">
                                         <input type="hidden" name="id<?php echo $counter; ?>" value="<?php echo $question -> id;?>">
                                         <b><?php echo $question->text; ?></b><br />
-                                        <input type="text" name="vote<?php echo $counter; ?>" max="100" min="0" placeholder="Rate from 0 to 100" /><br />
+                                        <div class="input-prepend">
+                                            <span class="add-on">
+                                                <i class="icon-signal"></i>
+                                            </span>
+                                            <input type="text" name="vote<?php echo $counter; ?>" placeholder="Rate from 0 to 100" />
+                                        </div>
                                         <textarea placeholder="Put some text here" name="comment<?php echo $counter; ?>"></textarea>
                                         <?php $counter ++; ?>
                                     </div>
@@ -127,11 +133,11 @@
                         <hr />
                         
                         <div class="labels">
-                            skill 1<br />
-                            skill 2<br />
-                            skill 3<br />
-                            skill 4<br />
-                            skill 5<br />
+                            Ammissione<br />
+                            Modalità corso<br />
+                            Docenti<br />
+                            Internazionalization<br />
+                            Stage<br />
                         </div>
 
                         <div class="bars">

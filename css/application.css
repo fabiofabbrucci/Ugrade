@@ -69,14 +69,15 @@ body {
 #course_show_graphs .bars{
     float: right;
     display: inline;
-    width: 200px;
+    width: 130px;
 }
 #course_show_graphs .labels{
     margin-top: -2px;
     float: left;
     display: inline;
-    width: 50px;
+    width: 130px;
     line-height: 25px;
+    text-align: right;
 }
 .progress{
     margin-bottom: 5px;
@@ -106,4 +107,17 @@ body {
 
 h1, h2, h3, h4, h5, h6, h7{
     font-family: 'Roboto', sans-serif;
+}
+
+.tab-pane{
+    padding: 0px 3px 10px 3px;
+}
+
+.form_comment{}
+.form_comment input[type=email]{
+    width: 500px;
+}
+.form_comment textarea{
+    width: 500px;
+    height: 100px;
 }
