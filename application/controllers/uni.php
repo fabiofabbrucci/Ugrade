@@ -107,7 +107,7 @@ class Uni extends CI_Controller {
     	$tmp ['uni']            = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
     	$tmp ["questions"]      = $this -> db -> query('select * from question') -> result();
     	$tmp ["program_id"]     = $id;
-    	$tmp ["feedback_count"] = $this -> uni_model -> getFeedbackCount ();
+    	$tmp ["feedback_count"] = $this -> uni_model -> getFeedbackCount ($id);
     	
     	return $tmp;
     }
