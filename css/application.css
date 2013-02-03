@@ -131,3 +131,11 @@ h1, h2, h3, h4, h5, h6, h7{
     padding-left: 5px;
     padding-right: 5px;
 }
+
+h2 small{
+    font-size: 1.5em;
+}
+
+h2 small span{
+    font-size: 0.5em;
+}

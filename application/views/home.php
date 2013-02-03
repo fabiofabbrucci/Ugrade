@@ -30,7 +30,7 @@
 
                 <form action="/index.php/home" method="post" id="search_form" class="form-horizontal">
                     <input type="text" name="key" value ="" placeholder="University, program, master ..."  />
-                    <input type="submit" class="btn btn-primary" />
+                    <input type="submit" class="btn btn-primary" value="Search" />
                     <a href="" id="adv_search">Advanced search</a>
                     <div id="div_adv_search" class="hide">
                         <label>Country</label>

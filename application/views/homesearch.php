@@ -27,7 +27,7 @@
             <div class="well">
                 <form action="/index.php/home" method="post" id="search_form" class="form-horizontal">
                     <input type="text" name="key" value ="" placeholder="University, program, master ..."  />
-                    <input type="submit" class="btn btn-primary" />
+                    <input type="submit" class="btn btn-primary" value="Search" />
                     <a href="#" id="adv_search">Advanced search</a>
                     <div id="div_adv_search" class="hide">
                         <label>Country</label>
@@ -65,7 +65,7 @@
             <div class="pull-right">
                 <input type="submit" class="btn compare-button" value="Compare" />
             </div>
-            <h3>Sono stati trovati <?php echo count($courses); ?> risultati per la tua ricerca</h3>
+            <h3><?php echo count($courses); ?> programs found</h3>
             <div id="course_list">
                 <?php foreach($courses as $c){ ?>
                     <article>
@@ -74,30 +74,35 @@
                             <?php echo $c['uni']->name; ?> <i class="icon-home"></i><br />
                             <b><?php echo $c ["feedback_count"]; ?></b> feedbacks <i class="icon-star"></i>
                         </div>
-                        <?php
-                            echo "<h2><a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a></h2>";
-                        ?>
-                        
-                        <div class="progress" style="width:90%;display:inline-block;">
-                        
-                        <?php 
-                            $colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info");
-                            $counter = 0;
-                            $n = count ($colors);
-                            $avg = 0;
-                            foreach ( $c['ranks'] as $rank ) {
-                                $avg += $rank ["avg"];
-                        ?>
-                        	<div class="bar <?php echo $colors [$counter %  $n]; ?>" style="width: <?php echo (($rank['avg']/100) * 20); ?>%;" rel="tooltip" title="<?php echo $rank['titolo'];?>"><?php printf ("%2.0f", $rank ["avg"]);?></div>
-                       
-                        <?php 
-                        	$counter ++;
-						}
-							if ($counter != 0)
-								$avg /= $counter;
-						?>
-                        </div>
-                        <?php printf ("<div style='display: inline-block; float: right;'>%d %%</div>", $avg); ?>
+                        <?php if(count($c['ranks']) > 0) { ?>
+                            <?php
+                                $media_globel = 0;
+                                foreach ( $c['ranks'] as $rank ) {
+                                    $media_globel += $rank ["avg"];
+                                }
+                                $somma_medie = $media_globel;
+                                $media_globel = $media_globel / count($c['ranks']);
+                            ?>
+                            <h2>
+                            <?php
+                                echo "<a href=\"/index.php/uni/course/".$c['corso']->id."\">".$c['corso']->name."</a>";
+                            ?>
+                                <?php printf ("<small>%d<span> / 100</span></small>", $media_globel); ?>
+                            </h2>
+
+                            <div class="progress" style="width:<?php echo $media_globel; ?>%; display:inline-block;">
+
+                            <?php 
+                                $colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info");
+                                $n = count ($colors);
+                                foreach ( $c['ranks'] as $counter => $rank ) {
+                            ?>
+                                    <div class="bar <?php echo $colors [$counter %  $n]; ?>" style="width: <?php echo $rank['avg'] / $somma_medie * 100; ?>%;" rel="tooltip" title="<?php echo $rank['titolo'];?>">
+                                        <?php printf ("%2.0f", $rank ["avg"]);?>
+                                    </div>
+                            <?php } ?>
+                            </div>
+                        <?php } ?>
                         <div class="clearfix"></div>
                     </article>
                 <?php } ?>
