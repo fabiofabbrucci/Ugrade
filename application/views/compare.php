@@ -53,7 +53,7 @@
                     </td>
                     <?php } ?>
                 </tr>
-                
+                <?php $colors = array ("bar-success", "bar-warning", "bar-danger", "bar-info"); ?>
                 <?php for ($i=0; $i<5; $i++){ ?>
                     <tr>
                     <?php foreach($courses as $index_c => $c){ ?>
@@ -64,7 +64,7 @@
                                 <?php }else{ ?>
                                     <td>
                                         <div class="progress">
-                                            <div class="bar" style="width: <?php echo $r['avg']; ?>%;"></div> <?php echo $r['avg']; ?> %
+                                            <div class="bar <?php echo $colors [$index_r %  count($colors)]; ?>" style="width: <?php echo $r['avg']; ?>%;"><?php echo $r['avg']; ?></div>
                                         </div>
                                     </td>
                                 <?php } ?>
