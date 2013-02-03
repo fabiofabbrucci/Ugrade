@@ -114,6 +114,9 @@ h1, h2, h3, h4, h5, h6, h7{
 }
 
 .form_comment{}
+.form_comment #surname{
+    width: 276px;
+}
 .form_comment input[type=email]{
     width: 500px;
 }

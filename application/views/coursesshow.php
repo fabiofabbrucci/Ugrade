@@ -32,7 +32,9 @@
                         <?php echo $course['uni']->name; ?>
                         <i class="icon-shopping-cart"></i> $
                         <?php echo $course['corso']->cost; ?> 
-                        <span class="badge badge-info">Business</span>
+                        <?php if ($course['corso']->sector) { ?>
+                        <span class="badge badge-info"><?php echo $course['corso']->sector; ?></span>
+                        <?php } ?>
                     </div>
 
                     <div id="course_description">
@@ -67,12 +69,10 @@
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" placeholder="Email">
                             </div>
-                            <div class="input-prepend">
+                            <div class="input-prepend pull-left">
                                 <span class="add-on"><i class="icon-user"></i></span><input type="text" name="name" placeholder="Name">
                             </div>
-                            <div class="input-prepend">
-                                <span class="add-on"><i class="icon-user"></i></span><input type="text" name="surname" placeholder="Surname">
-                            </div>
+                            <input type="text" name="surname" placeholder="Surname" id="surname">
                             <input type="hidden" name="counter" value="5">
                             <input type="hidden" name="program_id" value="<?php echo $course["program_id"]; ?>">
                                 <ul class="nav nav-tabs" id="tabs_comment">
@@ -106,14 +106,13 @@
                     <?php foreach($commenti as $index => $c): ?>
                     <div class="well">
                         <div class="pull-left" style="margin-right: 10px;">
+                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>" /><br />
                             <?php 
                                 echo $c['utenti']->name. " "; 
                                 if($c['utenti']->surname) { 
                                     echo substr($c['utenti']->surname, 0, 1)."."; 
                                 }
-                                ?>
-                            <ul id="myTab" class="nav nav-pills nav-stacked">
-                            <img src="http://www.gravatar.com/avatar/<?php echo md5($c['utenti']->username); ?>" /><br />
+                            ?>
                             <i><?php echo date("d/m/y", strtotime($c['1']->date));?></i>
                         </div>
                         <div class="contenuti">
