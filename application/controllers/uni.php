@@ -56,7 +56,7 @@ class Uni extends CI_Controller {
     	}
     	else if ( $result -> num_rows == 0 ) {
             $this -> db -> insert ( "user_account", array ("username" => $email, "password" => "passwd") );
-            $user_id = $this -> db -> inserted_id ();
+            $user_id = $this -> db -> insert_id ();
     	}else {
             echo "Error!";
             return;
@@ -75,13 +75,7 @@ class Uni extends CI_Controller {
     		$this -> db -> insert ("program_question", $data);
     	}
 
-    	//$this->load->model('uni_model');
-/*    	
-     	return $this -> load -> view('coursesshow', array (
-    			"message"  => "Dati inseriti",
-                "commenti" =>  $this -> uni_model -> commenti($program_id)
-    	));
-*/        
+    	$this->load->model('uni_model');
         $this->course($program_id, 'Commento inserito');
     }
     
