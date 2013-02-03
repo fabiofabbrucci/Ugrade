@@ -4,6 +4,12 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Uni extends CI_Controller {
+	public function __construct() {
+		parent::__construct();
+		
+		$this -> load -> model('uni_model');
+	}
+	
     public function index($id = "") 
     {
     	
@@ -31,9 +37,6 @@ class Uni extends CI_Controller {
 
         $c_final=array();
 
-        
-        $this -> load -> model('uni_model');
-        
         return $this -> load -> view ('coursesshow',array(
             "user"         =>  $c_final,
             "course"       =>  $this -> getCourse ($id),
@@ -78,19 +81,36 @@ class Uni extends CI_Controller {
         $this->course($program_id, 'Commento inserito');
     }
     
+    public function compare () {
+    	$ids = $this -> input -> post ("program");
+    	
+    	$courses = array ();
+    	
+    	foreach ( $ids as $id ) {
+    		$courses [] = $this -> getCourse ($id);
+    	}
+    	
+    	return $this -> load -> view ('compare',array(
+    			"courses"       =>  $courses
+    	));
+    }
+    
     private function getCourse ( $id ) {
     	$tmp = array();
+    	
     	$course = $this -> db -> query ( 'select * from program where id = ?', array($id) ) -> first_row ();
     	
-    	$tmp ["rank_position"] = $this -> uni_model -> getRankPosition ( $id );
-    	$tmp ["total_courses"] = $this -> uni_model -> getTotalCourses ();
-    	$tmp ["ranks"]         = $this -> uni_model -> getRanks ($id);
-    	$tmp ['corso']         = $course;
-    	$tmp ['uni']           = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
-    	$tmp ["questions"]     = $this -> db -> query('select * from question') -> result();
-    	$tmp ["program_id"]    = $id;
+    	$tmp ["rank_position"]  = $this -> uni_model -> getRankPosition ( $id );
+    	$tmp ["total_courses"]  = $this -> uni_model -> getTotalCourses ();
+    	$tmp ["ranks"]          = $this -> uni_model -> getRanks ($id);
+    	$tmp ['corso']          = $course;
+    	$tmp ['uni']            = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
+    	$tmp ["questions"]      = $this -> db -> query('select * from question') -> result();
+    	$tmp ["program_id"]     = $id;
+    	$tmp ["feedback_count"] = $this -> uni_model -> getFeedbackCount ();
     	
     	return $tmp;
     }
+
     
 }
