@@ -103,6 +103,7 @@ class Uni extends CI_Controller {
     	$tmp ["rank_position"]  = $this -> uni_model -> getRankPosition ( $id );
     	$tmp ["total_courses"]  = $this -> uni_model -> getTotalCourses ();
     	$tmp ["ranks"]          = $this -> uni_model -> getRanks ($id);
+    	$tmp ["avgRanks"]       = $this -> uni_model -> getAvgRanks ($id);
     	$tmp ['corso']          = $course;
     	$tmp ['uni']            = $this -> db -> query('select * from university where id = ?',array($course->university_id))->first_row();
     	$tmp ["questions"]      = $this -> db -> query('select * from question') -> result();
